@@ -1,0 +1,456 @@
+Q1)
+
+class A{
+    int a=1,b=1;
+    void show(){
+        int c=a+b;
+        System.out.println(c);
+    }
+    void sub(){
+        System.out.println(a-b);
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        A p=new A();
+        p.show();
+        p.sub();
+    }
+}
+Q2 
+class A {
+    int a, b ,c,d,e,f;
+
+    void show(int k, int p,int m ,int n ,int o, int q) {
+        a = k;
+        b = p;
+        c = m;
+        d = n;
+        e = o;
+        f = q;
+
+    }
+
+    void display() {
+        System.out.println(a + b);
+        System.out.println(a - c );
+        System.out.println(d/e);
+    }
+}
+
+public class Yuv {
+    public static void main(String[] args) {
+        A k = new A();
+        k.show(12, 78 ,33,44,55,66);
+        k.display();
+        k.display();
+    }
+}
+        
+        
+Q3) class A{
+    int a,b,c,d,e,f;
+    void show(int a ,int b){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.e = e;
+        this.f = f;
+        System.out.println(a+b);
+    }
+    void display(){
+        System.out.println(a+b);
+    }
+}
+public class Yuv{
+    public static void main(String[] args) {
+        A p=new A();
+        p.show(67,44 );
+        p.display();
+    }
+}
+
+
+Q4)
+
+
+
+class DataContainer {
+    
+    private int intValue;
+    private float floatValue;
+    private double doubleValue;
+    private char charValue;
+    private boolean booleanValue;
+    private String stringValue;
+
+    
+    public int getIntValue() {
+        return intValue;
+    }
+
+    public void setIntValue(int intValue) {
+        this.intValue = intValue;
+    }
+
+    
+    public float getFloatValue() {
+        return floatValue;
+    }
+
+    public void setFloatValue(float floatValue) {
+        this.floatValue = floatValue;
+    }
+
+  
+    public double getDoubleValue() {
+        return doubleValue;
+    }
+
+    public void setDoubleValue(double doubleValue) {
+        this.doubleValue = doubleValue;
+    }
+
+   
+    public char getCharValue() {
+        return charValue;
+    }
+
+    public void setCharValue(char charValue) {
+        this.charValue = charValue;
+    }
+
+  
+    public boolean isBooleanValue() {
+        return booleanValue;
+    }
+
+    public void setBooleanValue(boolean booleanValue) {
+        this.booleanValue = booleanValue;
+    }
+
+    
+    public String getStringValue() {
+        return stringValue;
+    }
+
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
+}
+
+
+public class DataContainerDemo {
+    public static void main(String[] args) {
+        DataContainer data = new DataContainer();
+
+        
+        data.setIntValue(42);
+        data.setFloatValue(3.14f);
+        data.setDoubleValue(2.71828);
+        data.setCharValue('A');
+        data.setBooleanValue(true);
+        data.setStringValue("Hello, World!");
+
+       
+        System.out.println("Integer Value: " + data.getIntValue());
+        System.out.println("Float Value: " + data.getFloatValue());
+        System.out.println("Double Value: " + data.getDoubleValue());
+        System.out.println("Char Value: " + data.getCharValue());
+        System.out.println("Boolean Value: " + data.isBooleanValue());
+        System.out.println("String Value: " + data.getStringValue());
+    }
+}
+
+
+ Q5)import java.util.Scanner;
+
+class Student {
+   
+    private String name;
+    private String fname;
+    private String nmame;
+    private String className; 
+    private String address;
+    private String contact;
+    private String rollNo;
+    private String gender;
+    private double marks;
+
+  
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getNmame() {
+        return nmame;
+    }
+
+    public void setNmame(String nmame) {
+        this.nmame = nmame;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(String rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+}
+
+
+public class StudentDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Student student = new Student();
+
+      
+        System.out.print("Enter Name: ");
+        student.setName(scanner.nextLine());
+
+        System.out.print("Enter Father's Name: ");
+        student.setFname(scanner.nextLine());
+
+        System.out.print("Enter Mother's Name: ");
+        student.setNmame(scanner.nextLine());
+
+        System.out.print("Enter Class: ");
+        student.setClassName(scanner.nextLine());
+
+        System.out.print("Enter Address: ");
+        student.setAddress(scanner.nextLine());
+
+        System.out.print("Enter Contact: ");
+        student.setContact(scanner.nextLine());
+
+        System.out.print("Enter Roll Number: ");
+        student.setRollNo(scanner.nextLine());
+
+        System.out.print("Enter Gender: ");
+        student.setGender(scanner.nextLine());
+
+        System.out.print("Enter Marks: ");
+        student.setMarks(scanner.nextDouble()); 
+
+        System.out.println("\nStudent Information:");
+        System.out.println("Name: " + student.getName());
+        System.out.println("Father's Name: " + student.getFname());
+        System.out.println("Mother's Name: " + student.getNmame());
+        System.out.println("Class: " + student.getClassName());
+        System.out.println("Address: " + student.getAddress());
+        System.out.println("Contact: " + student.getContact());
+        System.out.println("Roll Number: " + student.getRollNo());
+        System.out.println("Gender: " + student.getGender());
+        System.out.println("Marks: " + student.getMarks());
+
+        scanner.close();
+    }
+}
+Q6)import java.util.Scanner;
+
+
+class Employee {
+  
+    private String empName;
+    private String eid;
+    private String efName;
+    private String eContact;
+    private String eAddress;
+    private String eAlternateNumber;
+    private double salary;
+    private String eDepartment;
+    private String bankAccountNumber;
+    private String post;
+
+   
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public String getEid() {
+        return eid;
+    }
+
+    public void setEid(String eid) {
+        this.eid = eid;
+    }
+
+    public String getEfName() {
+        return efName;
+    }
+
+    public void setEfName(String efName) {
+        this.efName = efName;
+    }
+
+    public String getEContact() {
+        return eContact;
+    }
+
+    public void setEContact(String eContact) {
+        this.eContact = eContact;
+    }
+
+    public String getEAddress() {
+        return eAddress;
+    }
+
+    public void setEAddress(String eAddress) {
+        this.eAddress = eAddress;
+    }
+
+    public String getEAlternateNumber() {
+        return eAlternateNumber;
+    }
+
+    public void setEAlternateNumber(String eAlternateNumber) {
+        this.eAlternateNumber = eAlternateNumber;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getEDepartment() {
+        return eDepartment;
+    }
+
+    public void setEDepartment(String eDepartment) {
+        this.eDepartment = eDepartment;
+    }
+
+    public String getBankAccountNumber() {
+        return bankAccountNumber;
+    }
+
+    public void setBankAccountNumber(String bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+}
+
+
+public class CompanyDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Employee employee = new Employee();
+
+       
+        System.out.print("Enter Employee Name: ");
+        employee.setEmpName(scanner.nextLine());
+
+        System.out.print("Enter Employee ID: ");
+        employee.setEid(scanner.nextLine());
+
+        System.out.print("Enter Father's Name: ");
+        employee.setEfName(scanner.nextLine());
+
+        System.out.print("Enter Contact Number: ");
+        employee.setEContact(scanner.nextLine());
+
+        System.out.print("Enter Address: ");
+        employee.setEAddress(scanner.nextLine());
+
+        System.out.print("Enter Alternate Contact Number: ");
+        employee.setEAlternateNumber(scanner.nextLine());
+
+        System.out.print("Enter Salary: ");
+        employee.setSalary(scanner.nextDouble());
+        scanner.nextLine(); // Consume newline
+
+        System.out.print("Enter Department: ");
+        employee.setEDepartment(scanner.nextLine());
+
+        System.out.print("Enter Bank Account Number: ");
+        employee.setBankAccountNumber(scanner.nextLine());
+
+        System.out.print("Enter Post: ");
+        employee.setPost(scanner.nextLine());
+
+       
+        System.out.println("\nEmployee Information:");
+        System.out.println("Name: " + employee.getEmpName());
+        System.out.println("Employee ID: " + employee.getEid());
+        System.out.println("Father's Name: " + employee.getEfName());
+        System.out.println("Contact Number: " + employee.getEContact());
+        System.out.println("Address: " + employee.getEAddress());
+        System.out.println("Alternate Contact Number: " + employee.getEAlternateNumber());
+        System.out.println("Salary: " + employee.getSalary());
+        System.out.println("Department: " + employee.getEDepartment());
+        System.out.println("Bank Account Number: " + employee.getBankAccountNumber());
+        System.out.println("Post: " + employee.getPost());
+
+        scanner.close();
+    }
+}
+
