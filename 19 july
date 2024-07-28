@@ -1,0 +1,363 @@
+Q1)
+class A {
+    public int value;  
+
+    public A(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
+class B extends A {
+    public int add;  
+
+    
+    public B(int value, int add) {
+        super(value);  
+        this.add = add;
+    }
+    public int getValue() {
+        return super.getValue() + add;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B(10, 20); 
+        System.out.println(b.getValue()); 
+    }
+}
+
+Q2)
+class A {
+    private int value;  
+    public A(int value) {
+        this.value = value;
+    }
+    public int getValue() {
+        return value;
+    }
+}
+class B extends A {
+    public int additionalValue;  
+    public B(int value, int additionalValue) {
+        super(value);  
+        this.additionalValue = additionalValue;
+    }
+    public int getValue() {
+        return super.getValue() + additionalValue;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B bInstance = new B(10, 20);   
+        System.out.println(bInstance.getValue());
+    }
+}
+Q3) class A {
+    public int value;  
+     public A(int value) {
+        this.value = value;
+    }
+    public int getValue() {
+        return value;
+    }
+}
+class B extends A {
+    private int add;  
+    public B(int value, int add) {
+        super(value); 
+        this.add = add;
+    }
+    public int getValue() {
+        return super.getValue() + add;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B b = new B(10, 20);  
+        System.out.println(b.getValue());
+    }
+}
+Q4)
+class A {
+    private int value; 
+    public A(int value) {
+        this.value = value;
+    }
+    public int getValue() {
+        return value;
+    }
+}
+class B extends A {
+    private int additionalValue; 
+    public B(int value, int additionalValue) {
+        super(value);  
+        this.additionalValue = additionalValue;
+    }
+    public int getValue() {
+        return super.getValue() + additionalValue;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B(122, 440); 
+        System.out.println(b.getValue());
+    }
+}
+Q5)
+class A {
+    private int value; 
+    public A(int value) {
+        this.value = value;
+    }
+    public int getValue() {
+        return value;
+    }
+}
+class B extends A {
+    private int additionalValue; 
+    public B(int value, int additionalValue) {
+        super(value);  
+        this.additionalValue = additionalValue;
+    }
+    public int getValue() {
+        return super.getValue() + additionalValue;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B(122, 440); 
+        System.out.println(b.getValue());
+    }
+}
+Q6)
+class A {
+    public void add(int a, int b) {
+        System.out.println("Sum: " + (a + b));
+    }
+}
+class B extends A {
+    public void sub(int a, int b) {
+        System.out.println("Difference: " + (a - b));
+    }
+}
+
+class C extends B {
+    public void div(int a, int b) {
+        if (b != 0) {
+            System.out.println("Division: " + (a / b));
+        } else {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
+class D extends C {
+    public void multi(int a, int b) {
+        System.out.println("Product: " + (a * b));
+    }
+}
+public class Main {
+    public void mod() {
+        D dInstance = new D();
+        
+        
+        dInstance.add(10, 5);   
+        dInstance.sub(10, 5); 
+        dInstance.div(10, 5); 
+        dInstance.multi(10, 5);
+    }
+    public static void main(String[] args) {
+        Main mainInstance = new Main();
+        mainInstance.mod();
+    }
+}
+Q) class A {
+    public String valueA;
+    public A() {
+        this.valueA = "Value from Class A";
+        System.out.println("Class A default constructor");
+    }
+}
+class B extends A {
+    public String valueB;
+    public B() {
+        super();
+        this.valueB = "Value from Class B";
+        System.out.println("Class B default constructor");
+    }
+}
+class C extends B {
+   
+    public String valueC;
+
+  
+    public C() {
+        super();
+        this.valueC = "Value from Class C";
+        System.out.println("Class C default constructor");
+    }
+}
+class D extends C {
+   
+    public String valueD;
+
+   
+    public D() {
+        super(); 
+        this.valueD = "Value from Class D";
+        System.out.println("Class D default constructor");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        D dInstance = new D();
+        System.out.println("Accessing properties from Class A: " + dInstance.valueA);
+        System.out.println("Accessing properties from Class B: " + dInstance.valueB);
+        System.out.println("Accessing properties from Class C: " + dInstance.valueC);
+        System.out.println("Accessing properties from Class D: " + dInstance.valueD);
+    }
+}
+Q) 
+import java.util.Scanner;
+
+
+    protected int number1, number2;
+    protected Scanner scanner;
+
+
+    public A() {
+        scanner = new Scanner(System.in);
+        System.out.println("Class A: Addition");
+        System.out.print("Enter first number: ");
+        number1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        number2 = scanner.nextInt();
+    }
+
+   
+    public void addition() {
+        System.out.println("Addition result: " + (number1 + number2));
+    }
+}
+class B extends A {
+    
+    public B() {
+        super(); // Calls the default constructor of A
+        System.out.println("Class B: Subtraction");
+    }
+
+    
+    public void subtraction() {
+        System.out.print("Enter another number for subtraction: ");
+        int number3 = scanner.nextInt();
+        System.out.println("Subtraction result: " + (number1 - number3));
+    }
+}
+
+
+class C extends B {
+   
+    public C() {
+        super(); // Calls the default constructor of B
+        System.out.println("Class C: Multiplication");
+    }
+
+
+    public void multiplication() {
+        System.out.print("Enter another number for multiplication: ");
+        int number4 = scanner.nextInt();
+        System.out.println("Multiplication result: " + (number1 * number4));
+    }
+}
+
+
+class D extends C {
+    
+    public D() {
+        super();
+        System.out.println("Class D: Division");
+    }
+
+  
+    public void division() {
+        System.out.print("Enter a divisor: ");
+        int divisor = scanner.nextInt();
+        if (divisor != 0) {
+            System.out.println("Division result: " + (number1 / (double) divisor));
+        } else {
+            System.out.println("Division by zero is not allowed.");
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+   
+        D dInstance = new D();
+// M
+     
+        dInstance.addition();       
+        dInstance.subtraction();   
+        dInstance.multiplication(); 
+        dInstance.division();   
+    }
+}
+Q)
+class A {
+    public void displayA() {
+        System.out.println("Class A method.");
+    }
+}
+class B extends A {
+    public void displayB() {
+        System.out.println("Class B method.");
+    }
+}
+class C {
+    public void displayC() {
+        System.out.println("Class C method.");
+    }
+}
+class D extends C {
+    public void displayD() {
+        System.out.println("Class D method.");
+    }
+}
+class E extends D {
+    public void displayE() {
+        System.out.println("Class E method.");
+    }
+}
+class F {
+    public void displayF() {
+        System.out.println("Class F method.");
+    }
+}
+class G extends F {
+    public void displayG() {
+        System.out.println("Class G method.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B bInstance = new B();
+        bInstance.displayA(); 
+        bInstance.displayB();
+
+        
+        E eInstance = new E();
+        eInstance.displayC(); 
+        eInstance.displayD(); 
+        eInstance.displayE();
+        G gInstance = new G();
+        gInstance.displayF(); 
+        gInstance.displayG(); 
+    }
+}
