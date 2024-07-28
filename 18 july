@@ -1,0 +1,448 @@
+Q1 ) class A {
+    
+    private int num1;
+    private int num2;
+
+    
+    public A(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    
+    public int addNumbers() {
+        return num1 + num2;
+    }
+}
+
+class B {
+    private int num1;
+    private int num2;
+
+    public B(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public int multiplyNumbers() {
+        return num1 * num2;
+    }
+}
+
+class C {
+    
+    private double num1;
+    private double num2;
+
+    public C(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+   
+    public double divideNumbers() {
+        return num1 / num2;
+    }
+}
+
+class D {
+    
+    private int num1;
+    private int num2;
+
+    public D(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public int modulusNumbers() {
+        
+        return num1 % num2;
+    }
+}
+
+class Main {
+    // Instance variables
+    private int num1;
+    private int num2;
+
+    // Parameterized constructor to initialize the instance variables
+    public Main(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // Method to subtract num2 from num1 and return the result
+    public int subtractNumbers() {
+        return num1 - num2;
+    }
+
+    // Main method to test all the classes
+    public static void main(String[] args) {
+        // Create instances of each class with the given numbers
+        A addition = new A(10, 5);
+        B multiplication = new B(6, 7);
+        C division = new C(20.0, 4.0);
+        D modulus = new D(15, 4);
+        Main subtraction = new Main(9, 3);
+
+       
+        System.out.println("Addition: " + addition.addNumbers());
+        System.out.println("Multiplication: " + multiplication.multiplyNumbers());
+        System.out.println("Division: " + division.divideNumbers());
+        System.out.println("Modulus: " + modulus.modulusNumbers());
+        System.out.println("Subtraction: " + subtraction.subtractNumbers());
+    }
+} 
+
+
+Q2)
+
+class A {
+    private int num1;
+    private int num2;
+
+    public A(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    // Method to perform addition and print the result (no return value)
+    public void add() {
+        int result = num1 + num2;
+        System.out.println( result);
+    }
+}
+
+class B {
+    private int num1;
+    private int num2;
+
+   
+    public B(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    
+    public void mul() {
+        int result = num1 * num2;
+        System.out.println(result);
+    }
+}
+
+class C {
+    private double num1;
+    private double num2;
+
+   
+    public C(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    
+    public double Div() {
+        return num1 / num2;
+    }
+}
+
+class D {
+    private int num1;
+    private int num2;
+
+    
+    public D(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+      
+    public int Mod(int num) {
+
+        return num1 % num;
+    }
+}
+
+class Main {
+    private int num1;
+    private int num2;
+
+    
+    public Main(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+   
+    public Number sub() {
+        return new Integer(num1 - num2);
+    }
+
+    // Main method to test all classes
+    public static void main(String[] args) {
+        // Create instances of each class
+        A addition = new A(10, 5);
+        B multiplication = new B(6, 7);
+        C division = new C(20.0, 4.0);
+        D modulus = new D(15, 4);
+        Main subtraction = new Main(9, 3);
+
+        // Test the methods
+        addition.add();
+        multiplication.mul();
+        
+        
+         System.out.println("Division result: " + division.Div());
+        System.out.println("Modulus result: " + modulus.Mod(4));
+        System.out.println("Subtraction result: " + subtraction.sub());
+    }
+}
+
+Q3) 
+
+class A {
+    private int num1;
+    private int num2;
+
+  
+    public A(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public int addNumbers() {
+        return num1 + num2;
+    }
+
+    class B {
+        private int a;
+        private int b;
+
+        public B(int a, int b) {
+            this.a = a;
+            this.b = b;  // Fixed the incorrect assignment
+        }
+
+        public int multiplyNumbers() {
+            return a * b;
+        }
+
+        class C {
+            private double num1;
+            private double num2;
+
+            public C(double num1, double num2) {
+                this.num1 = num1;
+                this.num2 = num2;
+            }
+
+            public double divideNumbers() {
+                if (num2 == 0) {
+                    throw new ArithmeticException("Division by zero is not allowed.");
+                }
+                return num1 / num2;
+            }
+
+            class D {
+                private int num1;
+                private int num2;
+
+                public D(int num1, int num2) {
+                    this.num1 = num1;
+                    this.num2 = num2;
+                }
+
+                public int modulusNumbers() {
+                    if (num2 == 0) {
+                        throw new ArithmeticException("Division by zero is not allowed.");
+                    }
+                    return num1 % num2;
+                }
+
+                class Main {
+                    private int num1;
+                    private int num2;
+
+                    public Main(int num1, int num2) {
+                        this.num1 = num1;
+                        this.num2 = num2;
+                    }
+
+                    public int subtractNumbers() {
+                        return num1 - num2;
+                    }
+
+                    public static void main(String[] args) {
+                        A a = new A(5, 7);
+                        System.out.println("Addition: " + a.addNumbers());
+
+                        A.B b = a.new B(5, 7);
+                        System.out.println("Multiplication: " + b.multiplyNumbers());
+
+                        A.B.C c = b.new C(10.0, 2.0);
+                        System.out.println("Division: " + c.divideNumbers());
+
+                        A.B.C.D d = c.new D(10, 3);
+                        System.out.println("Modulus: " + d.modulusNumbers());
+
+                        A.B.C.D.Main main = d.new Main(15, 7);
+                        System.out.println("Subtraction: " + main.subtractNumbers());
+                    }
+                }
+            }
+        }
+    }
+}
+
+Q4) 
+class A {
+    
+    public void printMessage() {
+        System.out.println("hello world ");
+    }
+} class B extends A {
+    public void printCustomMessage(String message) {
+        System.out.println(" good morning  " + message);
+    }
+} 
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        a.printMessage();
+
+        B b = new B();
+        b.printMessage();
+        b.printCustomMessage("Hello from class B");
+    }
+} 
+
+
+Q5)
+
+class A {
+    public Number getValue() {
+        return 42;  
+    }
+} 
+class B extends A {
+    public Integer getValue() {
+        return 100;  
+    }
+} 
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        System.out.println("Value from class A: " + a.getValue());
+        B b = new B();
+        System.out.println("Value from class B: " + b.getValue());
+    }
+}
+
+
+Q6)
+class A {
+    public Number getValue() {
+        return 42;  
+    }
+} 
+class Main extends A {
+    public Integer getValue() {
+        return 100;  
+    }
+
+
+    public static void main(String[] args) {
+        
+        A a = new A();
+       
+        System.out.println("Value from class A: " + a.getValue());
+
+       
+        Main main = new Main();
+        System.out.println("Value from class Main: " + main.getValue());
+    }
+}
+
+
+Q7)
+
+class College {
+    private String collegeName;
+    private String collegeAddress;
+    private String collegeNumber;
+    private String collegeExpertise;
+    private String collegeFaculty;
+
+    public College(String collegeName, String collegeAddress, String collegeNumber, 
+                   String collegeExpertise, String collegeFaculty) {
+        this.collegeName = collegeName;
+        this.collegeAddress = collegeAddress;
+        this.collegeNumber = collegeNumber;
+        this.collegeExpertise = collegeExpertise;
+        this.collegeFaculty = collegeFaculty;
+    }
+
+    public void printDetails() {
+        System.out.println("College Name: " + collegeName);
+        System.out.println("College Address: " + collegeAddress);
+        System.out.println("College Number: " + collegeNumber);
+        System.out.println("College Expertise: " + collegeExpertise);
+        System.out.println("College Faculty: " + collegeFaculty);
+    }
+}
+
+class Student extends College {
+    private String studentName;
+    private String studentId;
+    private String studentNumber;
+    private String studentCourse;
+    private String studentAddress;
+    private String studentFName;
+    private String studentMName; 
+
+    
+    public Student(String collegeName, String collegeAddress, String collegeNumber, 
+                   String collegeExpertise, String collegeFaculty, 
+                   String studentName, String studentId, String sNumber, 
+                   String sCourse, String sAddress, String sFName, String sMName) {
+        super(collegeName, collegeAddress, collegeNumber, collegeExpertise, collegeFaculty);
+        this.studentName = studentName;
+        this.studentId = studentId;
+        this.studentNumber = sNumber;
+        this.studentCourse = sCourse;
+        this.studentAddress = sAddress;
+        this.studentFName = sFName;
+        this.studentMName = sMName;
+    }
+
+    public void StudentDetails() {
+         printDetails();
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Student Number: " + studentNumber);
+        System.out.println("Course: " + studentCourse);
+        System.out.println("Address: " + studentAddress);
+        System.out.println("Father's Name: " + studentFName);
+        System.out.println("Mother's Name: " + studentMName);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student(
+            "Rajasthan University", 
+            " Rajasthan College, Jaipur ", 
+            "14112-1234", 
+            "Engineering,", 
+            "Prof. ram singh ",
+            "rohan saini", 
+            "S12345", 
+            "456", 
+            "Computer Science", 
+            "789 Student St, City", 
+            "Robert Smith", 
+            "Linda Smith"
+        );
+        student.StudentDetails();
+    }
+}
