@@ -1,0 +1,602 @@
+Q1)
+class A {
+    public void method1() {
+        System.out.println(" Class A");
+    }
+}
+class B extends A {
+   
+    public void method2() {
+        System.out.println(" Class B");
+    }
+}
+class C extends A {
+   
+    public void method3() {
+        System.out.println(" Class C");
+    }
+}
+class D extends B {
+    private C cInstance = new C();
+    public void method4() {
+        System.out.println(" Class D");
+    }
+    public void useMethod3() {
+        cInstance.method3();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        D dInstance = new D();
+        
+        
+        dInstance.method1();
+        dInstance.method2(); 
+        dInstance.useMethod3();
+        dInstance.method4(); 
+    }
+}
+Q2)
+class A {
+    public void method1() {
+        System.out.println("Class A");
+    }
+}
+class B {
+    public void method2() {
+        System.out.println("Class B");
+    }
+}
+
+class C {
+    public void method3() {
+        System.out.println("Class C");
+    }
+}
+
+class D {
+    public void method4() {
+        System.out.println("Class D");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A aInstance = new A();
+        B bInstance = new B();
+        C cInstance = new C();
+        D dInstance = new D();
+        
+        aInstance.method1(); 
+        bInstance.method2(); 
+        cInstance.method3(); 
+        dInstance.method4(); 
+    }
+}
+Q3) class A {
+    private int valueA;
+
+    
+    public int getValueA() {
+        return valueA;
+    }
+
+    
+    public void setValueA(int valueA) {
+        this.valueA = valueA;
+    }
+    
+    public void method1() {
+        System.out.println("Method 1 from Class A with value: " + valueA);
+    }
+}
+
+
+class B {
+    private String valueB;
+
+    
+    public String getValueB() {
+        return valueB;
+    }
+
+    
+    public void setValueB(String valueB) {
+        this.valueB = valueB;
+    }
+
+    
+    public void method2() {
+        System.out.println("Method 2 from Class B with value: " + valueB);
+    }
+}
+
+
+class C {
+    private double valueC;
+
+    
+    public double getValueC() {
+        return valueC;
+    }
+
+   
+    public void setValueC(double valueC) {
+        this.valueC = valueC;
+    }
+
+    
+    public void method3() {
+        System.out.println("Method 3 from Class C with value: " + valueC);
+    }
+}
+
+
+class D {
+    private boolean valueD;
+
+    
+    public boolean isValueD() {
+        return valueD;
+    }
+
+    
+    public void setValueD(boolean valueD) {
+        this.valueD = valueD;
+    }
+
+    
+    public void method4() {
+        System.out.println("Method 4 from Class D with value: " + valueD);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+      
+        A aInstance = new A();
+        B bInstance = new B();
+        C cInstance = new C();
+        D dInstance = new D();
+        
+      
+        aInstance.setValueA(10);
+        bInstance.setValueB("Hello");
+        cInstance.setValueC(15.5);
+        dInstance.setValueD(true);
+        
+        
+        aInstance.method1(); 
+        bInstance.method2(); 
+        cInstance.method3(); 
+        dInstance.method4(); 
+
+        
+        System.out.println("Value from Class A: " + aInstance.getValueA());
+        System.out.println("Value from Class B: " + bInstance.getValueB());
+        System.out.println("Value from Class C: " + cInstance.getValueC());
+        System.out.println("Value from Class D: " + dInstance.isValueD());
+    }
+}
+Q4)
+class A {
+   
+    private final int CONSTANT_A;
+
+   
+    public A(int constantA) {
+        this.CONSTANT_A = constantA;
+    }
+
+
+    public void method1() {
+        System.out.println("Method 1 from Class A with constant value: " + CONSTANT_A);
+    }
+}
+class B {
+    
+    private final String CONSTANT_B;
+
+   
+    public B(String constantB) {
+        this.CONSTANT_B = constantB;
+    }
+
+   
+    public void method2() {
+        System.out.println("Method 2 from Class B with constant value: " + CONSTANT_B);
+    }
+}
+
+
+class C {
+    
+    private final double CONSTANT_C;
+
+   
+    public C(double constantC) {
+        this.CONSTANT_C = constantC;
+    }
+
+
+    public void method3() {
+        System.out.println("Method 3 from Class C with constant value: " + CONSTANT_C);
+    }
+}
+
+
+class D {
+   
+    private final boolean CONSTANT_D;
+
+   
+    public D(boolean constantD) {
+        this.CONSTANT_D = constantD;
+    }
+
+   
+    public void method4() {
+        System.out.println("Method 4 from Class D with constant value: " + CONSTANT_D);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+        A aInstance = new A(100);
+        B bInstance = new B("Hello World");
+        C cInstance = new C(3.14);
+        D dInstance = new D(true);
+        
+        
+        aInstance.method1();
+        bInstance.method2(); 
+        cInstance.method3(); 
+        dInstance.method4(); 
+    }
+}
+Q5) class A {
+    private int valueA;
+
+   
+    public A(int valueA) {
+        this.valueA = valueA;
+    }
+
+   
+    public void method1() {
+        System.out.println("Method 1 from Class A with value: " + valueA);
+    }
+}
+class B {
+    private String valueB;
+    public B(String valueB) {
+        this.valueB = valueB;
+    }
+    public void method2() {
+        System.out.println("Method 2 from Class B with value: " + valueB);
+    }
+}
+class C {
+   
+    private double valueC;
+
+   
+    public C(double valueC) {
+        this.valueC = valueC;
+    }
+    public void method3() {
+        System.out.println("Method 3 from Class C with value: " + valueC);
+    }
+}
+class D {
+    
+    private boolean valueD;
+    public D(boolean valueD) {
+        this.valueD = valueD;
+    }
+    public void method4() {
+        System.out.println("Method 4 from Class D with value: " + valueD);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A aInstance = new A(10);
+        B bInstance = new B("Hello");
+        C cInstance = new C(20.5);
+        D dInstance = new D(true);
+        
+        
+        aInstance.method1(); 
+        bInstance.method2();
+        cInstance.method3();
+        dInstance.method4();
+    }
+}
+Q6) class A {
+    private int value;
+    public A(int value) {
+        this.value = value;
+    }
+    public void method1() {
+        System.out.println("Method 1 from Class A with value: " + value);
+    }
+}
+class B {
+    
+    private String value;
+
+    
+    public B(String value) {
+        this.value = value;
+    }
+
+  
+    public void method2() {
+        System.out.println("Method 2 from Class B with value: " + value);
+    }
+}
+
+
+class C {
+   
+    private double value;
+
+    
+    public C(double value) {
+        this.value = value;
+    }
+
+    
+    public void method3() {
+        System.out.println("Method 3 from Class C with value: " + value);
+    }
+}
+
+
+class D {
+    
+    private boolean value;
+
+    
+    public D(boolean value) {
+        this.value = value;
+    }
+
+    
+    public void method4() {
+        System.out.println("Method 4 from Class D with value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A aInstance = new A(10);
+        B bInstance = new B("Hello");
+        C cInstance = new C(20.5);
+        D dInstance = new D(true);
+        
+        aInstance.method1(); 
+        bInstance.method2(); 
+        cInstance.method3(); 
+        dInstance.method4(); 
+    }
+}
+Q7)
+class A {
+    public A() {
+        System.out.println("Constructor of Class A");
+    }
+
+   
+    public void methodA() {
+        System.out.println("Method from Class A");
+    }
+}
+
+
+class B extends A {
+    
+    public B() {
+        super(); 
+        System.out.println("Constructor of Class B");
+    }
+    public void methodB() {
+        System.out.println("Method from Class B");
+    }
+}
+
+class C extends A {
+
+    public C() {
+        super(); 
+        System.out.println("Constructor of Class C");
+    }
+
+   
+    public void methodC() {
+        System.out.println("Method from Class C");
+    }
+}
+class D extends B {
+
+    public D() {
+        super();
+        System.out.println("Constructor of Class D");
+    }
+
+    
+    public void methodD() {
+        System.out.println("Method from Class D");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        D dInstance = new D();
+
+        dInstance.methodA(); 
+        dInstance.methodB();
+        dInstance.methodC();
+        dInstance.methodD();
+    }
+}
+
+Q8)
+import java.util.Scanner;
+
+class Information {
+   
+    protected String cname;  
+    protected String caddress;
+    protected String cnumber;
+    protected String crating;
+
+   
+    public Information(String cname, String caddress, String cnumber, String crating) {
+        this.cname = cname;
+        this.caddress = caddress;
+        this.cnumber = cnumber;
+        this.crating = crating;
+    }
+    public static void displayColleges() {
+        System.out.println("Available Colleges:");
+        System.out.println("1. RU");
+        System.out.println("2. RTU");
+        System.out.println("3. UOT");
+    }
+}
+class College extends Information {
+    protected double[] feesBca; // Fees for BCA per semester
+    protected double[] feesBcom; // Fees for BCOM per semester
+    protected double[] feesBba; // Fees for BBA per semester
+    protected double[] feesMcom; // Fees for MCOM per semester
+
+    public College(String cname, String caddress, String cnumber, String crating,
+                   double[] feesBca, double[] feesBcom, double[] feesBba, double[] feesMcom) {
+        super(cname, caddress, cnumber, crating);
+        this.feesBca = feesBca;
+        this.feesBcom = feesBcom;
+        this.feesBba = feesBba;
+        this.feesMcom = feesMcom;
+    }
+    public void displayCollegeDetails() {
+        System.out.println("College Name: " + cname);
+        System.out.println("Address: " + caddress);
+        System.out.println("Contact Number: " + cnumber);
+        System.out.println("Rating: " + crating);
+    }
+    public void displayCourses() {
+        System.out.println("Courses Offered:");
+        System.out.println("1. BCA");
+        System.out.println("2. BCOM");
+        System.out.println("3. BBA");
+        System.out.println("4. MCOM");
+    }
+    public void displayCourseFees(String course) {
+        double[] fees = null;
+        switch (course.toLowerCase()) {
+            case "bca":
+                fees = feesBca;
+                break;
+            case "bcom":
+                fees = feesBcom;
+                break;
+            case "bba":
+                fees = feesBba;
+                break;
+            case "mcom":
+                fees = feesMcom;
+                break;
+            default:
+                System.out.println("Invalid course.");
+                return;
+        }
+
+        System.out.println(course.toUpperCase() + " Fees per Semester:");
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Semester " + (i + 1) + ": " + fees[i]);
+        }
+    }
+}
+
+
+class Student extends College {
+
+    private String sname;
+    private String saddress;
+    private String scontact;
+    private int ssemester;
+    private String course;
+
+    public Student(String cname, String caddress, String cnumber, String crating,
+                   double[] feesBca, double[] feesBcom, double[] feesBba, double[] feesMcom,
+                   String sname, String saddress, String scontact, int ssemester, String course) {
+        super(cname, caddress, cnumber, crating, feesBca, feesBcom, feesBba, feesMcom);
+        this.sname = sname;
+        this.saddress = saddress;
+        this.scontact = scontact;
+        this.ssemester = ssemester;
+        this.course = course;
+    }
+    public void displayStudentDetails() {
+        System.out.println(course.toUpperCase());
+        System.out.println("Student Name: " + sname);
+        System.out.println("Address: " + saddress);
+        System.out.println("Contact: " + scontact);
+        System.out.println("Semester: " + ssemester);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        double[] feesBca = {5000, 5200, 5400, 5600, 5800, 6000};
+        double[] feesBcom = {6000, 6200, 6400, 6600, 6800, 7000};
+        double[] feesBba = {7000, 7200, 7400, 7600, 7800, 8000};
+        double[] feesMcom = {8000, 8200, 8400, 8600, 8800, 9000};
+
+        College ru = new College("RU", "Address RU", "1234567890", "4.5", feesBca, feesBcom, feesBba, feesMcom);
+        College rtu = new College("RTU", "Address RTU", "2345678901", "4.2", feesBca, feesBcom, feesBba, feesMcom);
+        College uot = new College("UOT", "Address UOT", "3456789012", "4.0", feesBca, feesBcom, feesBba, feesMcom);
+
+        Information.displayColleges();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select a college (1 for RU, 2 for RTU, 3 for UOT): ");
+        int collegeChoice = scanner.nextInt();
+        scanner.nextLine();  // Consume newline
+
+        College selectedCollege = null;
+        switch (collegeChoice) {
+            case 1:
+                selectedCollege = ru;
+                break;
+            case 2:
+                selectedCollege = rtu;
+                break;
+            case 3:
+                selectedCollege = uot;
+                break;
+            default:
+                System.out.println("Invalid college choice.");
+                System.exit(0);
+        }
+        selectedCollege.displayCollegeDetails();
+        selectedCollege.displayCourses();
+
+        System.out.println("Enter course (bca/bcom/bba/mcom): ");
+        String courseInput = scanner.nextLine().toLowerCase();
+        selectedCollege.displayCourseFees(courseInput);
+        Student student = new Student(selectedCollege.cname, selectedCollege.caddress, selectedCollege.cnumber, 
+                                      selectedCollege.crating, selectedCollege.feesBca, selectedCollege.feesBcom, 
+                                      selectedCollege.feesBba, selectedCollege.feesMcom, "Student Name", 
+                                      "Student Address", "Student Contact", 3, courseInput.toUpperCase());
+
+        student.displayStudentDetails();
+        
+        scanner.close();
+    }
+}
+
