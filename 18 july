@@ -1,0 +1,323 @@
+Q1)
+
+
+class A {
+    private int a;
+    private int b;
+
+    void setA(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    int getA1() {
+        return a;
+    }
+
+    int getA2() {
+        return b;
+    }
+
+    void show() {
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        System.out.println(a / b);
+        System.out.println(a % b);
+    }
+}
+
+public class Yuv {
+    public static void main(String[] args) {
+        A p=new A();
+        p.setA(45, 33);
+        p.getA1();
+        p.getA2();
+        p.show();
+    }
+}
+
+
+
+Q2) 
+
+import java.util.Scanner;
+
+class A {
+   public A(int a, int b) {
+      System.out.println("Addition :" + (a + b));
+   }
+}
+
+class B {
+   public B(int a, int b) {
+      System.out.println("Subtraction :" + (a - b));
+   }
+}
+
+class C {
+   public C(int a, int b) {
+      System.out.println("Multiplication :" + (a * b));
+   }
+}
+
+class D {
+   public D(int a, int b) {
+      System.out.println("Division :" + (a / b));
+   }
+}
+
+class E {
+   public E(int a, int b) {
+      System.out.println("Modulas :" + (a + b));
+   }
+}
+
+public class AllOperation {
+   public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int value1, value2;
+
+      System.out.println("Enter your first value Input : ");
+      value1 = sc.nextInt();
+      System.out.println("Enter your Second value Input : ");
+      value2 = sc.nextInt();
+
+      B b = new B(value1, value2);
+   }
+}
+Q3)
+
+class A {
+    private int num1;
+    private int num2;
+
+   
+    public A(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+  
+    public void add() {
+        int result = num1 + num2;
+        System.out.println("Addition: " + result);
+    }
+}
+
+
+class B {
+    private int num1;
+    private int num2;
+
+  
+    public B(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+   
+    public void multiply() {
+        int result = num1 * num2;
+        System.out.println("Multiplication: " + result);
+    }
+}
+
+
+class C {
+    private double a;
+    private double b;
+    private double result;
+
+ 
+    public C(double a, double b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Denominator cannot be zero.");
+        }
+        this.a = a;
+        this.b = b;
+        this.result = this.a / this.b;
+    }
+
+    
+    public double getResult() {
+        return this.result;
+    }
+}
+
+class D {
+    private int a;
+    private int b;
+    private int c;
+
+   
+    public D(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Divisor cannot be zero.");
+        }
+        this.a = a;
+        this.b = b;
+        this.c = this.a % this.b;
+    }
+
+  
+    public int getModularResult() {
+        return this.c;
+    }
+}
+
+
+class DerivedResult {
+    private String message;
+
+    public DerivedResult(String message) {
+        this.message = message;
+    }
+
+   
+    public String toString() {
+        return this.message;
+    }
+}
+
+
+class Main {
+    private int number1;
+    private int number2;
+    private int result;
+
+   
+    public Main(int number1, int number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+        this.result = this.number1 - this.number2;
+    }
+
+   
+    public DerivedResult getResult() {
+        return new DerivedResult("The result of the subtraction is: " + this.result);
+    }
+}
+
+
+public class Yuv {
+    public static void main(String[] args) {
+        
+        int num1 = 10;
+        int num2 = 5;
+
+       
+        A a = new A(num1, num2);
+        B b = new B(num1, num2);
+
+     
+        a.add();
+        b.multiply();
+
+        C c = new C(10, 2);
+        System.out.println("Division: " + c.getResult());
+
+        D d = new D(10, 2);
+        System.out.println("Modulus: " + d.getModularResult());
+
+        Main main = new Main(15, 8);
+        DerivedResult result = main.getResult();
+        System.out.println(result);
+    }
+}
+
+Q4)
+class A {
+    private int num1;
+    private int num2;
+
+  
+    public A(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public int addNumbers() {
+        return num1 + num2;
+    }
+
+    class B {
+        private int a;
+        private int b;
+
+        public B(int a, int b) {
+            this.a = a;
+            this.b = b;  // Fixed the incorrect assignment
+        }
+
+        public int multiplyNumbers() {
+            return a * b;
+        }
+
+        class C {
+            private double num1;
+            private double num2;
+
+            public C(double num1, double num2) {
+                this.num1 = num1;
+                this.num2 = num2;
+            }
+
+            public double divideNumbers() {
+                if (num2 == 0) {
+                    throw new ArithmeticException("Division by zero is not allowed.");
+                }
+                return num1 / num2;
+            }
+
+            class D {
+                private int num1;
+                private int num2;
+
+                public D(int num1, int num2) {
+                    this.num1 = num1;
+                    this.num2 = num2;
+                }
+
+                public int modulusNumbers() {
+                    if (num2 == 0) {
+                        throw new ArithmeticException("Division by zero is not allowed.");
+                    }
+                    return num1 % num2;
+                }
+
+                class Main {
+                    private int num1;
+                    private int num2;
+
+                    public Main(int num1, int num2) {
+                        this.num1 = num1;
+                        this.num2 = num2;
+                    }
+
+                    public int subtractNumbers() {
+                        return num1 - num2;
+                    }
+
+                    public static void main(String[] args) {
+                        A a = new A(5, 7);
+                        System.out.println("Addition: " + a.addNumbers());
+
+                        A.B b = a.new B(5, 7);
+                        System.out.println("Multiplication: " + b.multiplyNumbers());
+
+                        A.B.C c = b.new C(10.0, 2.0);
+                        System.out.println("Division: " + c.divideNumbers());
+
+                        A.B.C.D d = c.new D(10, 3);
+                        System.out.println("Modulus: " + d.modulusNumbers());
+
+                        A.B.C.D.Main main = d.new Main(15, 7);
+                        System.out.println("Subtraction: " + main.subtractNumbers());
+                    }
+                }
+            }
+        }
+    }
+}
+
