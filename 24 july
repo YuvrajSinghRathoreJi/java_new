@@ -1,0 +1,477 @@
+Q1) 
+class Parent {
+    public void display() {
+        System.out.println("Parent display method");
+    }
+}
+
+class Child extends Parent {
+    public void display() {
+        System.out.println("Child display method");
+    }
+}
+
+class Grandparent {
+    
+    public void display() {
+        System.out.println("Grandparent display method");
+    }
+}
+
+
+class ParentMulti extends Grandparent {
+   
+    public void display() {
+        System.out.println("ParentMulti display method");
+    }
+}
+class ChildMulti extends ParentMulti {
+    public void display() {
+        System.out.println("ChildMulti display method");
+    }
+}
+class Base {
+    public void display() {
+        System.out.println("Base display method");
+    }
+}
+
+class Derived1 extends Base {
+    public void display() {
+        System.out.println("Derived1 display method");
+    }
+}
+class Derived2 extends Base {
+    public void display() {
+        System.out.println("Derived2 display method");
+    }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Parent p = new Parent();
+        Child c = new Child();
+        System.out.println("Single-Level Inheritance:");
+        p.display(); 
+        c.display();
+    
+        Grandparent g = new Grandparent();
+        ParentMulti pm = new ParentMulti();
+        ChildMulti cm = new ChildMulti();
+        System.out.println("\nMulti-Level Inheritance:");
+        g.display(); 
+        pm.display();
+        cm.display(); 
+        
+    
+        Base b = new Base();
+        Derived1 d1 = new Derived1();
+        Derived2 d2 = new Derived2();
+        System.out.println("\nHierarchical Inheritance:");
+        b.display(); 
+        d1.display(); 
+        d2.display();
+    }
+}
+Q2) import java.util.*;
+class Parent {
+    public String display(String message) {
+        return "Parent says: " + message;
+    }
+}
+class Child extends Parent {
+    public String display(String message) {
+        return "Child says: " + message;
+    }
+}
+
+class Grandparent {
+    public String display(String message) {
+        return "Grandparent says: " + message;
+    }
+}
+
+class ParentMulti extends Grandparent {
+    public String display(String message) {
+        return "ParentMulti says: " + message;
+    }
+}
+class ChildMulti extends ParentMulti {
+    public String display(String message) {
+        return "ChildMulti says: " + message;
+    }
+}
+
+class Base {
+    public String display(String message) {
+        return "Base says: " + message;
+    }
+}
+
+class Derived1 extends Base {
+    public String display(String message) {
+        return "Derived1 says: " + message;
+    }
+}
+class Derived2 extends Base {
+    public String display(String message) {
+        return "Derived2 says: " + message;
+    }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Single-Level Inheritance:");
+        System.out.print("Enter a message for Parent and Child: ");
+        String message1 = scanner.nextLine();
+
+        Parent parent = new Parent();
+        Child child = new Child();
+
+        System.out.println(parent.display(message1));
+        System.out.println(child.display(message1));
+        System.out.println("\nMulti-Level Inheritance:");
+        System.out.print("Enter a message for Grandparent, ParentMulti, and ChildMulti: ");
+        String message2 = scanner.nextLine();
+
+        Grandparent grandparent = new Grandparent();
+        ParentMulti parentMulti = new ParentMulti();
+        ChildMulti childMulti = new ChildMulti();
+
+        System.out.println(grandparent.display(message2));
+        System.out.println(parentMulti.display(message2));
+        System.out.println(childMulti.display(message2));
+        System.out.println("\nHierarchical Inheritance:");
+        System.out.print("Enter a message for Base, Derived1, and Derived2: ");
+        String message3 = scanner.nextLine();
+
+        Base base = new Base();
+        Derived1 derived1 = new Derived1();
+        Derived2 derived2 = new Derived2();
+
+        System.out.println(base.display(message3));
+        System.out.println(derived1.display(message3));
+        System.out.println(derived2.display(message3));
+    
+    }
+}
+Q3) import java.util.*;
+class Parent {
+    public Object display(String message) {
+        return "Parent says: " + message;
+    }
+}
+class Child extends Parent {
+    public String display(String message) {
+        return "Child says: " + message;
+    }
+}
+class Grandparent {
+    public Object display(String message) {
+        return "Grandparent says: " + message;
+    }
+}
+class ParentMulti extends Grandparent {
+    public String display(String message) {
+        return "ParentMulti says: " + message;
+    }
+}
+class ChildMulti extends ParentMulti {
+    public String display(String message) {
+        return "ChildMulti says: " + message;
+    }
+}
+class Base {
+    public Object display(String message) {
+        return "Base says: " + message;
+    }
+}
+class Derived1 extends Base {
+    public String display(String message) {
+        return "Derived1 says: " + message;
+    }
+}
+class Derived2 extends Base {
+    
+    public String display(String message) {
+        return "Derived2 says: " + message;
+    }
+}
+public class CovariantReturnDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Single-Level Inheritance:");
+        System.out.print("Enter a message for Parent and Child: ");
+        String message1 = scanner.nextLine();
+
+        Parent parent = new Parent();
+        Child child = new Child();
+
+        System.out.println(parent.display(message1));
+        System.out.println(child.display(message1));
+
+        System.out.println("\nMulti-Level Inheritance:");
+        System.out.print("Enter a message for Grandparent, ParentMulti, and ChildMulti: ");
+        String message2 = scanner.nextLine();
+
+        Grandparent grandparent = new Grandparent();
+        ParentMulti parentMulti = new ParentMulti();
+        ChildMulti childMulti = new ChildMulti();
+
+        System.out.println(grandparent.display(message2));
+        System.out.println(parentMulti.display(message2));
+        System.out.println(childMulti.display(message2));
+        System.out.println("\nHierarchical Inheritance:");
+        System.out.print("Enter a message for Base, Derived1, and Derived2: ");
+        String message3 = scanner.nextLine();
+
+        Base base = new Base();
+        Derived1 derived1 = new Derived1();
+        Derived2 derived2 = new Derived2();
+
+        System.out.println(base.display(message3));
+        System.out.println(derived1.display(message3));
+        System.out.println(derived2.display(message3));
+
+    }
+}
+Q4)
+
+import java.util.*;
+class Parent {
+    public void method1() {
+        System.out.println("Parent method1");
+    }
+    public void method2(String message) {
+        System.out.println("Parent method2: " + message);
+    }
+}
+class Child extends Parent {
+    public void method1() {
+        System.out.println("Child method1");
+    }
+    public void method2(String message) {
+        System.out.println("Child method2: " + message);
+    }
+}
+class Grandparent {
+    public Object method1() {
+        return "Grandparent method1";
+    }
+    public void method2(String message) {
+        System.out.println("Grandparent method2: " + message);
+    }
+    public String method3(String message) {
+        return "Grandparent method3: " + message;
+    }
+}
+class ParentMulti extends Grandparent {
+    public String method1() {
+        return "ParentMulti method1";
+    }
+    public void method2(String message) {
+        System.out.println("ParentMulti method2: " + message);
+    }
+    public String method3(String message) {
+        return "ParentMulti method3: " + message;
+    }
+}
+class ChildMulti extends ParentMulti {
+    public String method1() {
+        return "ChildMulti method1";
+    }
+    public void method2(String message) {
+        System.out.println("ChildMulti method2: " + message);
+    }
+    public String method3(String message) {
+        return "ChildMulti method3: " + message;
+    }
+}
+
+class Base {
+   
+    public Object method1() {
+        return "Base method1";
+    }
+    public void method2(String message) {
+        System.out.println("Base method2: " + message);
+    }
+    public Object method3() {
+        return "Base method3";
+    }
+}
+class Derived1 extends Base {
+    public String method1() {
+        return "Derived1 method1";
+    }
+    public void method2(String message) {
+        System.out.println("Derived1 method2: " + message);
+    }
+    public String method3() {
+        return "Derived1 method3";
+    }
+}
+class Derived2 extends Base {
+    public String method1() {
+        return "Derived2 method1";
+    }
+    public void method2(String message) {
+        System.out.println("Derived2 method2: " + message);
+    }
+    public String method3() {
+        return "Derived2 method3";
+    }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Single-Level Inheritance:");
+        System.out.print("Enter a message for Parent and Child methods: ");
+        String message1 = scanner.nextLine();
+
+        Parent parent = new Parent();
+        Child child = new Child();
+
+        System.out.println("Parent:");
+        parent.method1();
+        parent.method2(message1);
+
+        System.out.println("Child:");
+        child.method1();
+        child.method2(message1);
+        System.out.println("\nMulti-Level Inheritance:");
+        System.out.print("Enter a message for Grandparent, ParentMulti, and ChildMulti methods: ");
+        String message2 = scanner.nextLine();
+
+        Grandparent grandparent = new Grandparent();
+        ParentMulti parentMulti = new ParentMulti();
+        ChildMulti childMulti = new ChildMulti();
+
+        System.out.println("Grandparent:");
+        System.out.println(grandparent.method1());
+        grandparent.method2(message2);
+        System.out.println(grandparent.method3(message2));
+
+        System.out.println("ParentMulti:");
+        System.out.println(parentMulti.method1());
+        parentMulti.method2(message2);
+        System.out.println(parentMulti.method3(message2));
+
+        System.out.println("ChildMulti:");
+        System.out.println(childMulti.method1());
+        childMulti.method2(message2);
+        System.out.println(childMulti.method3(message2));
+
+        System.out.println("\nHierarchical Inheritance:");
+        System.out.print("Enter a message for Base, Derived1, and Derived2 methods: ");
+        String message3 = scanner.nextLine();
+
+        Base base = new Base();
+        Derived1 derived1 = new Derived1();
+        Derived2 derived2 = new Derived2();
+
+        System.out.println("Base:");
+        System.out.println(base.method1());
+        base.method2(message3);
+        System.out.println(base.method3());
+
+        System.out.println("Derived1:");
+        System.out.println(derived1.method1());
+        derived1.method2(message3);
+        System.out.println(derived1.method3());
+
+        System.out.println("Derived2:");
+        System.out.println(derived2.method1());
+        derived2.method2(message3);
+        System.out.println(derived2.method3());
+    }
+}
+Q5)
+import java.util.*;
+class Parent {
+    public void method() {
+        System.out.println("Parent method");
+    }
+}
+
+class Child extends Parent {
+    public void method() {
+        super.method();
+        System.out.println("Child method");
+    }
+}
+class Grandparent {
+    public Object method() {
+        return "Grandparent method";
+    }
+}
+class ParentMulti extends Grandparent {
+    public String method() {
+        return (String) super.method() + " -> ParentMulti method";
+    }
+}
+
+class ChildMulti extends ParentMulti {
+    public String method() {
+        return super.method() + " -> ChildMulti method";
+    }
+}
+
+class Base {
+    public Object method() {
+        return "Base method";
+    }
+}
+class Derived1 extends Base {
+    public String method() {
+        return (String) super.method() + " -> Derived1 method";
+    }
+}
+class Derived2 extends Base {
+    public String method() {
+     return (String) super.method() + " -> Derived2 method";
+    }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Single-Level Inheritance:");
+        Parent parent = new Parent();
+        Child child = new Child();
+
+        System.out.println("Parent:");
+        parent.method();
+
+        System.out.println("Child:");
+        child.method();
+
+        System.out.println("\nMulti-Level Inheritance:");
+        Grandparent grandparent = new Grandparent();
+        ParentMulti parentMulti = new ParentMulti();
+        ChildMulti childMulti = new ChildMulti();
+
+        System.out.println("Grandparent:");
+        System.out.println(grandparent.method());
+
+        System.out.println("ParentMulti:");
+        System.out.println(parentMulti.method());
+
+        System.out.println("ChildMulti:");
+        System.out.println(childMulti.method());
+
+        System.out.println("\nHierarchical Inheritance:");
+        Base base = new Base();
+        Derived1 derived1 = new Derived1();
+        Derived2 derived2 = new Derived2();
+
+        System.out.println("Base:");
+        System.out.println(base.method());
+
+        System.out.println("Derived1:");
+        System.out.println(derived1.method());
+
+        System.out.println("Derived2:");
+        System.out.println(derived2.method());
+
+        scanner.close();
+    }
+}
