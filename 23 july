@@ -1,0 +1,264 @@
+Q1) public class A{
+    public void display() {
+        System.out.println("No parameters");
+    }
+    public void display(int num) {
+        System.out.println( num);
+    }
+    public void display(int num, String text) {
+        System.out.println(num+ " " + text);
+    }
+    public void display(String text) {
+        System.out.println(text);
+    }
+    public static void main(String[] args) {
+        A b = new A();
+        b.display();
+        b.display(5);
+        b.display(10, "Hello"); 
+        b.display("World");
+    }
+}
+Q2)
+public class MethodOverloadExample {
+    public void printDetails() {
+        System.out.println("No parameters");
+    }
+    public void printDetails(String name) {
+        System.out.println("Name: " + name);
+    }
+    public void printDetails(String name, int age) {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+    public void printDetails(String name, int age, String city) {
+        System.out.println("Name: " + name + ", Age: " + age + ", City: " + city);
+    }
+    public static void main(String[] args) {
+        MethodOverloadExample example = new MethodOverloadExample();
+        example.printDetails();
+        example.printDetails("yuvraj"); 
+        example.printDetails("raju", 25);
+        example.printDetails("chirag", 30, "jaipur"); 
+    }
+}
+Q3)
+public class MethodOverloadExample {
+    public void printDetails(int number) {
+        System.out.println("Number: " + number);
+    }
+    public void printDetails(double number) {
+        System.out.println("Double Number: " + number);
+    }
+    public void printDetails(String text) {
+        System.out.println("Text: " + text);
+    }
+    public static void main(String[] args) {
+        MethodOverloadExample example = new MethodOverloadExample();
+        example.printDetails(10);
+        example.printDetails(10.5); 
+        example.printDetails("Hello");
+    }
+}
+Q4)public class A {
+    public void display(int number) {
+        System.out.println("Displaying integer: " + number);
+    }
+     public static void main(String[] args) {
+        A b = new A();
+       b.display(10); 
+    }
+}
+Q5)
+class Parent {
+    public void display() {
+        System.out.println("Parent display() method with no arguments");
+    }
+
+    public void display(String message) {
+        System.out.println("Parent display() method with message: " + message);
+    }
+}
+
+class Child extends Parent {
+    public void display(int number) {
+        System.out.println("Child display() method with number: " + number);
+    }
+
+    public void display(String message, int number) {
+        System.out.println("Child display() method with message: " + message + " and number: " + number);
+    }
+}
+class A {
+    public void print() {
+        System.out.println("A print() method with no arguments");
+    }
+
+    public void print(String message) {
+        System.out.println("A print() method with message: " + message);
+    }
+}
+
+class B extends A {
+    public void print(int number) {
+        System.out.println("B print() method with number: " + number);
+    }
+}
+
+class C extends B {
+    public void print(String message, int number) {
+        System.out.println("C print() method with message: " + message + " and number: " + number);
+    }
+}
+class Base {
+    public void show() {
+        System.out.println("Base show() method with no arguments");
+    }
+
+    public void show(String message) {
+        System.out.println("Base show() method with message: " + message);
+    }
+}
+class Derived1 extends Base {
+    public void show(int number) {
+        System.out.println("Derived1 show() method with number: " + number);
+    }
+}
+
+class Derived2 extends Base {
+    public void show(double value) {
+        System.out.println("Derived2 show() method with double value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Single-Level Inheritance:");
+        Child child = new Child();
+        child.display();                 
+        child.display("Hello");          
+        child.display(10); 
+        child.display("Hello", 20);
+        System.out.println();
+        System.out.println("Multilevel Inheritance:");
+        C c = new C();
+        c.print(); 
+        c.print("Hello");  
+        c.print(10);
+        c.print("Hello", 20); 
+        System.out.println();
+        System.out.println("Hierarchical Inheritance:");
+        Derived1 d1 = new Derived1();
+        Derived2 d2 = new Derived2();
+        d1.show();                          
+        d1.show("Hello"); 
+        d1.show(10);
+        d2.show();
+        d2.show("Hello"); 
+        d2.show(10.5); 
+    }
+}
+Q6class A {
+    private int a;
+    private String b;
+    public A() {
+        System.out.println("Default constructor called.");
+        this.a = 0;
+        this.b = "Default";
+    }
+    public A(int a) {
+        System.out.println( "int argument called.");
+        this.a = a;
+        this.b = "Default";
+    }
+
+   
+    public A(String value2) {
+        System.out.println(" String argument called.");
+        this.a = 0;
+        this.b = b;
+    }
+    public A(int a, String b) {
+        System.out.println(" int and String arguments called.");
+        this.a = a;
+        this.b = b;
+    }
+    public void display() {
+        System.out.println("Value1: " + a);
+        System.out.println("Value2: " + b);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+     
+        A a1 = new A();
+        a1.display();
+        System.out.println();
+        A a2 = new A(100);
+        a2.display();
+        System.out.println();
+        A a3 = new A("Custom String");
+        a3.display();
+        System.out.println();
+        A a4 = new A(200, "Another Custom String");
+        a4.display();
+    }
+}
+Q7)
+class A {
+    private int a;
+    private String b;
+    private double c;
+    public A() {
+        System.out.println("Default constructor called.");
+        this.a = 0;
+        this.b = "Default";
+        this.c = 0.0;
+    }
+    public A(int value1) {
+        System.out.println("Parameterized constructor with int argument called.");
+        this.a = a;
+        this.b = "Default";
+        this.c = 0.0;
+    }
+    public A(String value2) {
+        System.out.println("Parameterized constructor with String argument called.");
+        this.a = 0;
+        this.b = b;
+        this.c = 0.0;
+    }
+    public A(int value1, String value2) {
+        System.out.println("Parameterized constructor with int and String arguments called.");
+        this.a = a;
+        this.b = b;
+        this.c = 0.0;
+    }
+    public A(int value1, String value2, double value3) {
+        System.out.println("Parameterized constructor with int, String, and double arguments called.");
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    public void display() {
+        System.out.println( a);
+        System.out.println( b);
+        System.out.println( c);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj1 = new A();
+        obj1.display();
+        System.out.println();
+        A obj2 = new A(100);
+        obj2.display();
+        System.out.println();
+        A obj3 = new A("String");
+        obj3.display();
+        System.out.println();
+        A obj4 = new A(200, "Another String");
+        obj4.display();
+        System.out.println();
+        A obj5 = new A(300, "String with Double");
+        obj5.display();
+    }
+}
