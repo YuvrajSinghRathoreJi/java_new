@@ -1,0 +1,420 @@
+Q1)
+abstract class A {
+    abstract void Method1();
+    void Method2() {
+        System.out.println("non-abstract method.");
+    }
+}
+class B extends A {
+    void Method1() {
+        System.out.println("Implementation of the abstract method.");
+    }
+    void Method2() {
+        System.out.println("non-abstract method in class B.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B k = new B();
+        k.Method1();
+        k.Method2();
+    }
+}
+
+Q2)
+abstract class A {
+    abstract void Method1();
+    void Method2() {
+        System.out.println("non-abstract method in class A.");
+    }
+}
+class B extends A {
+
+    void Method1() {
+        System.out.println("Implementation of the abstract method in class B.");
+    }
+
+    void Method2() {
+        System.out.println("non-abstract method in class B.");
+    }
+}
+class C extends B {
+
+    void Method1() {
+        System.out.println("abstract method in class C.");
+    }
+
+    void Method2() {
+        System.out.println("non-abstract method in class C.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        C p = new C();
+
+        p.Method1();
+        p.Method2();
+    }
+}
+
+Q3)
+abstract class A {
+    abstract void Method1();
+    void Method2() {
+        System.out.println("non-abstract method in class A.");
+    }
+}
+
+class B extends A {
+
+    void Method1() {
+        System.out.println("the abstract method in class B.");
+    }
+
+    void Method2() {
+        System.out.println("non-abstract method in class B.");
+    }
+}
+class C extends A {
+
+    void Method1() {
+        System.out.println("the abstract method in class C.");
+    }
+    void Method2() {
+        System.out.println("non-abstract method in class C.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B K = new B();
+        C L = new C();
+
+        K.Method1();
+        K.Method2();
+
+        L.Method1();
+        L.Method2();
+    }
+}
+
+Q4)
+abstract class A {
+    abstract void MethodA();
+
+    void nonMethodA() {
+        System.out.println("non-abstract method in class A.");
+    }
+}
+
+abstract class B {
+    abstract void MethodB();
+
+    void nonMethodB() {
+        System.out.println(" non-abstract method in class B.");
+    }
+}
+
+abstract class C {
+    abstract void MethodC();
+
+    void nonMethodC() {
+        System.out.println("non-abstract method in class C.");
+    }
+}
+class H extends B {
+    @Override
+    void MethodB() {
+        System.out.println("abstract method in class H.");
+    }
+}
+class D extends C {
+    @Override
+    void MethodC() {
+        System.out.println("abstract method in class D.");
+    }
+}
+class E extends A {
+    @Override
+    void MethodA() {
+        System.out.println("abstract method in class E.");
+    }
+}
+class F extends H {
+}
+class G extends C {
+    @Override
+    void MethodC() {
+        System.out.println("abstract method in class G.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        F f = new F();
+        f.MethodB();
+        f.nonMethodB();
+
+        D d = new D();
+        d.MethodC();
+        d.nonMethodC();
+
+        E objE = new E();
+        objE.MethodA();
+        objE.nonMethodA();
+
+        G objG = new G();
+        objG.MethodC();
+        objG.nonMethodC();
+    }
+}
+
+Q5)
+abstract class A {
+    abstract void Methodb();
+}
+public class Main {
+    public static void main(String[] args) {
+        A k = new A() {
+            void Methodb() {
+                System.out.println("hello world ");
+            }
+        };
+        k.Methodb();
+    }
+}
+Q6)
+abstract class A {
+    abstract void Method();
+}
+public class Main {
+    public static void main(String[] args) {
+        A K = new A() {
+            void Method() {
+                System.out.println("Hello world");
+            }
+        };
+        K.Method();
+    }
+}
+
+Q7)
+abstract class A { 
+    abstract String MethodA();
+}
+public class Main {
+    public static void main(String[] args) {
+        A K = new A() {
+            String MethodA() {
+                return "hello world";
+            }
+        };
+        System.out.println(K.MethodA());
+    }
+}
+
+Q8)
+abstract class A {
+    abstract String abstractMethod(int value);
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new A() {
+            String abstractMethod(int value) {
+                return "value " + value;
+            }
+        };
+        int Value = 42;
+        String result = obj.abstractMethod(Value);
+        System.out.println(result);
+    }
+}
+
+Q9)
+abstract class A {
+    abstract Object A();
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new A() {
+            String A() {
+                return "hello world";
+            }
+        };
+        System.out.println(obj.A());
+    }
+}
+
+Q10)
+abstract class A {
+    String nonAbstractMethod1(int value) {
+        return "Value is: " + value;
+    }
+    abstract String abstractMethod1();
+    void nonAbstractMethod2(String text) {
+        System.out.println("Text received: " + text);
+    }
+    abstract void abstractMethod2();
+    A covariantMethod() {
+        return this;
+    }
+}
+class B extends A {
+    B(int parameter) {
+        System.out.println(" class B with parameter: " + parameter);
+    }
+
+    String abstractMethod1() {
+        return "abstractMethod1 in B.";
+    }
+
+    void abstractMethod2() {
+        System.out.println("abstractMethod2 in B.");
+    }
+
+    B covariantMethod() {
+        return this;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A anonymousObj = new A() {
+            String abstractMethod1() {
+                return "abstractMethod1.";
+            }
+            void abstractMethod2() {
+                System.out.println("abstractMethod2.");
+            }
+            A covariantMethod() {
+                return this;
+            }
+        };
+        System.out.println(anonymousObj.nonAbstractMethod1(100));
+        System.out.println(anonymousObj.abstractMethod1());
+        anonymousObj.nonAbstractMethod2("Hello");
+        anonymousObj.abstractMethod2();
+        A instanceOfB = new B(123);
+        System.out.println(instanceOfB.abstractMethod1());
+        instanceOfB.nonAbstractMethod2("World");
+        instanceOfB.abstractMethod2();
+        A instanceOfBAsA = instanceOfB.covariantMethod();
+        if (instanceOfBAsA instanceof B) {
+            System.out.println("instance of B");
+        }
+    }
+}
+
+Q11)
+abstract class A {
+    String nonAbstractMethod1(int value) {
+        return "Value is: " + value;
+    }
+    abstract String abstractMethod1();
+    void nonAbstractMethod2(String text) {
+        System.out.println("Text received: " + text);
+    }
+    abstract void abstractMethod2();
+    A covariantMethod() {
+        return this;
+    }
+}
+class B extends A {
+    String abstractMethod1() {
+        return "Concrete implementation of abstractMethod1 in B.";
+    }
+    void abstractMethod2() {
+        System.out.println("Concrete implementation of abstractMethod2 in B.");
+    }
+
+    B covariantMethod() {
+        return this;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A anonymousObj = new A() {
+            String abstractMethod1() {
+                return "Anonymous implementation of abstractMethod1.";
+            }
+            void abstractMethod2() {
+                System.out.println("Anonymous implementation of abstractMethod2.");
+            }
+            A covariantMethod() {
+                return this;
+            }
+        };
+        System.out.println(anonymousObj.nonAbstractMethod1(100));
+        System.out.println(anonymousObj.abstractMethod1());
+        anonymousObj.nonAbstractMethod2("Hello");
+        anonymousObj.abstractMethod2();
+
+        A instanceOfB = new B();
+        System.out.println(instanceOfB.nonAbstractMethod1(42));
+        System.out.println(instanceOfB.abstractMethod1());
+        instanceOfB.nonAbstractMethod2("World");
+        instanceOfB.abstractMethod2();
+
+        A instanceOfBAsA = instanceOfB.covariantMethod();
+
+        }
+    }
+
+
+Q12)
+abstract class A {
+    String nonAbstractMethod1(int value) {
+        return "Value is: " + value;
+    }
+    abstract String abstractMethod1();
+    void nonAbstractMethod2(String text) {
+        System.out.println("Text received: " + text);
+    }
+    abstract void abstractMethod2();
+    A covariantMethod() {
+        return this;
+    }
+}
+class B extends A {
+    String abstractMethod1() {
+        return "abstractMethod1 in B.";
+    }
+
+    void abstractMethod2() {
+        System.out.println("abstractMethod2 in B.");
+    }
+    B covariantMethod() {
+        return this;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A anonymousObj = new A() {
+            String abstractMethod1() {
+                return "abstractMethod1.";
+            }
+            void abstractMethod2() {
+                System.out.println("abstractMethod2.");
+            }
+            A covariantMethod() {
+                return this;
+            }
+        };
+
+
+        System.out.println(anonymousObj.nonAbstractMethod1(100));
+        System.out.println(anonymousObj.abstractMethod1());
+        anonymousObj.nonAbstractMethod2("Hello");
+        anonymousObj.abstractMethod2();
+
+        A instanceOfB = new B();
+        System.out.println(instanceOfB.nonAbstractMethod1(42));
+        System.out.println(instanceOfB.abstractMethod1());
+        instanceOfB.nonAbstractMethod2("World");
+        instanceOfB.abstractMethod2();
+        
+        A instanceOfBAsA = instanceOfB.covariantMethod();
+        if (instanceOfBAsA instanceof B) {
+            System.out.println("Covariant return type is an instance of B.");
+        }
+    }
+}
+
+
