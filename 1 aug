@@ -1,0 +1,278 @@
+Q1)
+interface A {
+    void method();
+}
+class B {
+    int a(int number) {
+        return number * number;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A myInterface = new A() {
+            public void method() {
+                System.out.println("hello java ");
+            }
+        };
+        myInterface.method();
+        B C = new B();
+        int number = 5;
+        int result = C.a(number);
+        System.out.println(result);
+    }
+}
+
+Q2)
+interface A {
+    void method();
+}
+class B {
+    String getGreeting() {
+        return "Hello from B class ";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A myInterface = new A() {
+            public void method() {
+                System.out.println("hii this is java ");
+            }
+        };
+        myInterface.method();
+
+        B b = new B();
+        String greeting = b.getGreeting();
+        System.out.println(greeting);
+    }
+}
+
+Q3)
+interface A {
+    String getMessage();
+}
+class B {
+    void show(String message) {
+        System.out.println(message);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A myInterface = new A() {
+            @Override
+            public String getMessage() {
+                return "Hello from A";
+            }
+        };
+
+        String message = myInterface.getMessage();
+        System.out.println(message);
+
+        B a = new B();
+
+        a.show("hello world ");
+    }
+}
+
+Q4)
+interface A {
+    int compute(int value);
+}
+
+class B {
+    void show() {
+        System.out.println("hello");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A myInterface = new A() {
+            public int compute(int value) {
+                return value * value;
+            }
+        };
+
+        int result = myInterface.compute(5);
+        System.out.println(result);
+
+        B b = new B();
+        b.show();
+    }
+}
+
+Q5)
+interface A {
+    default void method1() {
+        System.out.println("A interface method non-abstract");
+    }
+
+    void method2();
+}
+
+interface B {
+    void method3();
+    default void method4() {
+        System.out.println("B interface non-abstract method");
+    }
+}
+
+interface C {
+    void method5();
+    default void method6() {
+        System.out.println("C interface non-abstract method");
+    }
+}
+
+interface D {
+    void method7();
+    default void method8() {
+        System.out.println("D interface non-abstract method");
+    }
+}
+
+interface G {
+    void method11();
+    default void method12() {
+        System.out.println("G interface non-abstract method");
+    }
+}
+class E {
+    void method9() {
+        System.out.println("Method9 in class E");
+    }
+
+    class F {
+        void method10() {
+            System.out.println("Method10 in class F");
+        }
+    }
+}
+
+class H {
+    void method13() {
+        System.out.println("Method13 in class H");
+    }
+
+    void method14() {
+        System.out.println("Method14 in class H");
+    }
+}
+class ImplementationClass implements A, B, C, D, G {
+    public void method2() {
+        System.out.println("ImplementationClass method2");
+    }
+    public void method3() {
+        System.out.println("ImplementationClass method3");
+    }
+    public void method5() {
+        System.out.println("ImplementationClass method5");
+    }
+    public void method7() {
+        System.out.println("ImplementationClass method7");
+    }
+    public void method11() {
+        System.out.println("ImplementationClass method11");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ImplementationClass impl = new ImplementationClass();
+
+        impl.method1(); 
+        impl.method2(); 
+
+        impl.method3(); 
+        impl.method4(); 
+        
+        impl.method5(); 
+        impl.method6(); 
+
+        impl.method7(); 
+        impl.method8(); 
+
+        impl.method11(); 
+        impl.method12();
+
+        E e = new E();
+        e.method9(); 
+
+        E.F f = e.new F();
+        f.method10(); 
+
+        H h = new H();
+        h.method13(); 
+        h.method14(); 
+    }
+}
+
+Q6)
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB(int value);
+}
+
+interface C {
+    String methodC();
+}
+
+interface D {
+    int methodD(String text);
+}
+
+class E implements A, B, C, D {
+    @Override
+    public void methodA() {
+        System.out.println("Method A from interface A");
+    }
+
+    public void methodB(int value) {
+        System.out.println("Method B from interface B with value: " + value);
+    }
+
+    
+    public String methodC() {
+        return "Method C from interface C";
+    }
+
+   
+    public int methodD(String text) {
+        return text.length();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        E e = new E();
+
+        e.methodA();
+
+        e.methodB(10);
+
+        String resultC = e.methodC();
+        System.out.println(resultC);
+
+        int resultD = e.methodD("Hello, World!");
+        System.out.println("Length of the text: " + resultD);
+    }
+}
+Q7)
+interface A {
+   
+    default void show() {
+        System.out.println("hello");
+    }
+}
+
+class B implements A {
+    
+
+public class Main1 {
+    public static void main(String[] args) {
+        A p = new B();
+        p.show();
+    }
+}
+
