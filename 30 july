@@ -1,0 +1,186 @@
+Q1)
+interface A {
+    void method1();
+    void method2(String arg);
+    int method3();
+    String method4(int arg);
+}
+class B implements A {
+    public void method1() {
+        System.out.println("method1");
+    }
+    public void method2(String arg) {
+        System.out.println("method2 " + arg);
+    }
+    public int method3() {
+        return 42;
+    }
+    public String method4(int arg) {
+        return "method4 " + arg;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.method1();
+        obj.method2("Hello");
+        System.out.println("method3 " + obj.method3());
+        System.out.println(obj.method4(100));
+    }
+}
+Q2)
+interface A {
+    void methodA();
+}
+interface B {
+    void methodB(String arg);
+}
+
+interface C {
+    int methodC();
+}
+
+interface D {
+    String methodD(int arg);
+}
+class E implements A, B, C, D {
+    public void methodA() {
+        System.out.println("methodA() from interface A");
+    }
+    public void methodB(String arg) {
+        System.out.println("methodB() from interface B with argument: " + arg);
+    }
+    public int methodC() {
+        return 10;
+    }
+
+    public String methodD(int arg) {
+        return "methodD() from interface D with argument: " + arg;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        E obj = new E();
+
+        obj.methodA();
+        obj.methodB("Hello");
+        System.out.println("methodC() returned: " + obj.methodC());
+        System.out.println(obj.methodD(100)); 
+    }
+}
+
+Q3)
+interface A {
+    void methodA();
+}
+interface B {
+    void methodB(String arg);
+}
+interface C {
+    int methodC();
+}
+interface D {
+    String methodD(int arg);
+}
+class E implements A, B, C, D {
+    public void methodA() {
+        System.out.println("interface A");
+    }
+    public void methodB(String arg) {
+        System.out.println("interface B with argument: " + arg);
+    }
+
+    public int methodC() {
+        return 20;
+    }
+    public String methodD(int arg) {
+        return " interface D with argument: " + arg;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        E obj = new E();
+        obj.methodA();
+        obj.methodB("Hello");
+        System.out.println(obj.methodC());
+        System.out.println(obj.methodD(100));
+    }
+}
+
+Q4)interface A {
+    void methodA();
+}
+interface B extends A {
+    void methodB(String arg);
+}
+interface C extends A {
+    int methodC();
+}
+interface D extends A {
+    String methodD(int arg);
+}
+class E implements B, C, D {
+    public void methodA() {
+        System.out.println("interface A");
+    }
+    public void methodB(String arg) {
+        System.out.println("interface B with argument: " + arg);
+    }
+    public int methodC() {
+        return 30;
+    }
+    public String methodD(int arg) {
+        return "interface D with argument: " + arg;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        E obj = new E();
+        obj.methodA();
+        obj.methodB("Hello");
+        System.out.println("returned: " + obj.methodC());
+        System.out.println(obj.methodD(100));
+    }
+}
+
+Q5)
+interface A {
+    void methodA();
+}
+interface B extends A {
+    void methodB(String arg);
+}
+interface C extends B {
+    int methodC();
+}
+
+interface D extends C {
+    String methodD(int arg);
+}
+
+class E implements B, C, D {
+    public void methodA() {
+        System.out.println("methodA() from interface A");
+    }
+    public void methodB(String arg) {
+        System.out.println("methodB() from interface B with argument: " + arg);
+    }
+    public int methodC() {
+        return 42;
+    }
+    public String methodD(int arg) {
+        return "methodD() from interface D with argument: " + arg;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        E obj = new E();
+        obj.methodA();
+        obj.methodB("Hello");
+        System.out.println("methodC() returned: " + obj.methodC());
+        System.out.println(obj.methodD(100));
+    }
+}
+
+
