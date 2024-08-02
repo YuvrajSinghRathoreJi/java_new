@@ -1,0 +1,518 @@
+Q1)
+interface MyInterface {
+    void method1();
+}
+
+
+class A implements MyInterface {
+    public void method1() {
+        System.out.println("Method1 implementation in class A");
+    }
+}
+
+class B extends A {
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B k = new B();
+        
+        k.method1();
+    }
+}
+Q2)
+interface MyInterface {
+    void method1();
+    int method2(String arg);
+    String method3();
+    A method4();
+}
+class A implements MyInterface {
+    public void method1() {
+        System.out.println("implementation in class A");
+    }
+    public int method2(String arg) { 
+        return arg.length();
+    }
+    public String method3() {
+        return "Method3 class A";
+    }
+
+    public A method4() {
+        return new A();
+    }
+}
+class B extends A {
+}
+public class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+
+        obj.method1();
+        int length = obj.method2("Hello");
+        System.out.println( length);
+        System.out.println( obj.method3());
+        A result = obj.method4();
+        System.out.println( result.getClass().getSimpleName());
+    }
+}
+
+Q3)
+interface w {
+    void method1();
+}
+
+interface x {
+    int method2(String arg);
+}
+
+interface y {
+    String method3();
+}
+
+interface z {
+    D method4();
+}
+
+class A implements w{
+    public void method1() {
+        System.out.println("Method1 implementation in class A");
+    }
+}
+
+class B1 implements x {
+    public int method2(String arg) {
+        return arg.length();
+    }
+}
+
+class C implements y {
+    @Override
+    public String method3() {
+        return "Method3 result from class C";
+    }
+}
+
+class D implements z {
+    @Override
+    public D method4() {
+        return new D();
+    }
+}
+
+class B extends A implements w, x, y {
+    @Override
+    public int method2(String arg) {
+        return arg.length();
+    }
+
+    @Override
+    public String method3() {
+        return "Method3 result from class B";
+    }
+
+    @Override
+    public D method4() {
+        return new D();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        B1 b1 = new B1();
+        C c = new C();
+        D d = new D();
+        B b = new B();
+
+        a.method1();
+
+        System.out.println("method2() from B1 returned: " + b1.method2("Hello"));
+
+        System.out.println("method3() from C returned: " + c.method3());
+
+        D dResult = d.method4();
+        System.out.println("method4() from D returned an instance of: " + dResult.getClass().getSimpleName());
+
+        b.method1();
+        System.out.println("method2() from B returned: " + b.method2("World"));
+        System.out.println("method3() from B returned: " + b.method3());
+        D bMethod4Result = b.method4();
+        System.out.println("method4() from B returned an instance of: " + bMethod4Result.getClass().getSimpleName());
+    }
+}
+
+Q4)
+interface MyInterface {
+    int method2(String arg);
+}
+class A {
+    void method1() {
+        System.out.println("class A");
+    }
+}
+class B extends A implements MyInterface {
+    public int method2(String arg) {
+        return arg.length();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        b.method1();
+        System.out.println(b.method2("Hello"));
+    }
+}
+
+Q5)
+class A {
+    interface C {
+        void method1();
+        void method2(String arg);
+        String method3();
+        int method4(int num);
+    }
+    static class ImplementC implements C {
+        public void method1() {
+            System.out.println(" class A");
+        }
+
+        public void method2(String arg) {
+            System.out.println(" argument: " + arg);
+        }
+
+
+        public String method3() {
+            return "class A";
+        }
+
+        public int method4(int num) {
+            return num * 2;
+        }
+    }
+}
+class B extends A {
+    private C cInstance = new ImplementC();
+
+    void useMethods() {
+        cInstance.method1();
+        cInstance.method2("Hello");
+        System.out.println(  cInstance.method3());
+        System.out.println( cInstance.method4(10));
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        b.useMethods();
+    }
+}
+
+Q6)
+class A {
+    interface C {
+        void method1();
+    }
+    interface D {
+        void method2(String arg);
+    }
+    interface E {
+        String method3();
+    }
+    interface F {
+        int method4(int num);
+    }
+}
+class B implements A.C, A.D, A.E, A.F {
+    public void method1() {
+        System.out.println("Method1 implementation in class B");
+    }
+    public void method2(String arg) {
+        System.out.println("Method2 implementation with argument: " + arg);
+    }
+    public String method3() {
+        return "Method3 result from class B";
+    }
+    public int method4(int num) {
+        return num * 3;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        B b = new B();
+        b.method1(); 
+        b.method2("Hello"); 
+        System.out.println("method3() returned: " + b.method3()); 
+        System.out.println("method4(10) returned: " + b.method4(10));
+    }
+}
+
+Q7)
+class A {
+    class B {
+        void show() {
+            System.out.println("Hello class B inside class A");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A a = new A();
+        A.B b = a.new B();
+        b.show();
+    }
+}
+
+Q8)
+interface I {
+    class A {
+        interface P {
+            void nestedMethod();
+        }
+        void displayMessage() {
+            System.out.println("Hello from class A inside interface I!");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        I.A a = new I.A();
+        I.A.P P = new I.A.P() {
+            public void nestedMethod() {
+                System.out.println("Nested method implementation from NestedI");
+            }
+        };
+        a.displayMessage();
+        P.nestedMethod();
+    }
+}
+
+Q9)
+class A {
+    interface C {
+        void interfaceMethod();
+
+        class B{
+            void Method() {
+                System.out.println("Hello world");
+            }
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A.C.B P = new A.C.B();
+        P.Method();
+    }
+}
+
+Q10)interface A {
+    interface B {
+        void methodB();
+    }
+    interface C {
+        String methodC();
+    }
+}
+class D implements A.B {
+    public void methodB() {
+        System.out.println("class D");
+    }
+}
+class E implements A.C {
+    public String methodC() {
+        return "result from class E";
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A.B dInstance = new D();
+        dInstance.methodB();
+
+        A.C eInstance = new E();
+        System.out.println(eInstance.methodC());
+    }
+}
+
+Q11)
+class A {
+    interface B {
+        void methodB();
+    }
+
+    interface C {
+        String methodC();
+    }
+}
+
+class D implements A.B {
+    
+    public void methodB() {
+        System.out.println("MethodB implementation in class D");
+    }
+}
+
+class E implements A.C {
+    public String methodC() {
+        return "MethodC result from class E";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A.B dInstance = new D();
+        dInstance.methodB();
+
+        A.C eInstance = new E();
+        System.out.println(eInstance.methodC());
+    }
+}
+Q12)
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB(String arg);
+}
+
+interface C {
+    String methodC();
+}
+
+interface D {
+    int methodD(int arg);
+}
+public class Main {
+    public static void main(String[] args) {
+        A a = new A() {
+            public void methodA() {
+                System.out.println("MethodA implementation in anonymous class");
+            }
+        };
+        a.methodA();
+
+        B b = new B() {
+            public void methodB(String arg) {
+                System.out.println("MethodB implementation in anonymous class with argument: " + arg);
+            }
+        };
+        b.methodB("Hello");
+
+        C c = new C() {
+            public String methodC() {
+                return "MethodC result from anonymous class";
+            }
+        };
+        System.out.println(c.methodC());
+
+        D d = new D() {
+            
+            public int methodD(int arg) {
+                return arg * 2; 
+            }
+        };
+        System.out.println("MethodD result from anonymous class: " + d.methodD(5));
+    }
+}
+
+Q13)
+class A {
+    void methodA() {
+        System.out.println("class A");
+    }
+}
+
+interface B {
+    void methodB();
+}
+class C extends A implements B {
+
+    public void methodB() {
+        System.out.println("class c extand ");
+    }
+
+    void methodA() {
+        System.out.println("class C");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        C c = new C();
+
+        c.methodA();
+        c.methodB();
+    }
+}
+
+Q14)
+class A {
+    void methodA() {
+        System.out.println("MethodA  class A");
+    }
+}
+interface B {
+    void methodB();
+}
+interface C {
+    String methodC();
+}
+interface D {
+    int methodD(int arg);
+}
+class E extends A implements B, C, D {
+    public void methodB() {
+        System.out.println("MethodB class E");
+    }
+    public String methodC() {
+        return "Method  class E";
+    }
+    public int methodD(int arg) {
+        return arg * 2; // Example implementation
+    }
+    void methodA() {
+        System.out.println("MethodA  in class E");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        E e = new E();
+
+        e.methodA();
+        e.methodB();
+        System.out.println(e.methodC());
+        System.out.println("methodD  " + e.methodD(5));
+    }
+}
+
+Q15)
+class A {
+    interface F {
+        void methodF();
+    }
+}
+interface B {
+    class K {
+        void methodK() {
+            System.out.println("MethodK in class K inside interface B");
+        }
+    }
+}
+class C extends A implements A.F {
+    public void methodF() {
+        System.out.println("MethodF implementation in class C");
+    }
+    void useClassK() {
+        B.K k = new B.K();
+        k.methodK();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        C c = new C();
+        c.methodF();
+        c.useClassK();
+    }
+}
+
