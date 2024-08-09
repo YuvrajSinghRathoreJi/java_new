@@ -1,0 +1,394 @@
+Q1)
+public class Main  {
+
+    private String outerField = "Outer class field";
+
+    private static String staticOuterField = "Static outer class field";
+
+    static class StaticNestedClass {
+        static void staticMethod() {
+            System.out.println("Static method in StaticNestedClass");
+
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+
+        }
+    }
+    void nonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+
+        System.out.println("Accessing outerField: " + outerField);
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        StaticNestedClass.staticMethod();
+    }
+    static void staticMethod() {
+        System.out.println("Static method in OuterClass");
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        StaticNestedClass.staticMethod();
+    }
+
+    public static void main(String[] args) {
+        Main.staticMethod();
+        Main outer = new Main();
+        outer.nonStaticMethod();
+    }
+}
+
+Q2)
+public class OuterClass {
+
+    private String outerField = "Outer class field";
+    private static String staticOuterField = "Static outer class field";
+
+    class InnerClass {
+        void nonStaticMethod() {
+            System.out.println("Non-static method in InnerClass");
+            System.out.println("Accessing outerField: " + outerField);
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+        }
+
+]        static void staticMethod() {
+            System.out.println("Static method in InnerClass");
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+ }
+    }
+    static void outerStaticMethod() {
+        System.out.println("Static method in OuterClass");
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        
+    }
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+        InnerClass inner = new InnerClass();
+        inner.nonStaticMethod();
+        InnerClass.staticMethod();
+    }
+
+    public static void main(String[] args) {
+        OuterClass.outerStaticMethod();
+        OuterClass outer = new OuterClass();
+        outer.outerNonStaticMethod();
+    }
+}
+
+Q3)
+public class OuterClass {
+
+    private String outerField = "Outer class field";
+
+    private static String staticOuterField = "Static outer class field";
+    static class StaticInnerClass {
+        void nonStaticMethod() {
+            System.out.println("Non-static method in StaticInnerClass");
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+            System.out.println("Accessing outerField through an instance: " + outer.outerField);
+        }
+    }
+    static void outerStaticMethod() {
+        System.out.println("Static method in OuterClass");
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod();
+    }
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod();
+    }
+
+    public static void main(String[] args) {
+        OuterClass.outerStaticMethod();
+        OuterClass outer = new OuterClass();
+        outer.outerNonStaticMethod();
+    }
+}
+
+Q4)
+public class OuterClass {
+    private String outerField = "Outer class field";
+    private static String staticOuterField = "Static outer class field";
+    static class StaticInnerClass {
+
+        void nonStaticMethod(OuterClass outer) {
+            System.out.println("Non-static method in StaticInnerClass");
+
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+
+            System.out.println("Accessing outerField through an instance: " + outer.outerField);
+        }
+    }
+    static void outerStaticMethod() {
+        System.out.println("Static method in OuterClass");
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        StaticInnerClass inner = new StaticInnerClass();
+        OuterClass outer = new OuterClass();
+        inner.nonStaticMethod(outer);
+    }
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod(this);  
+    }
+
+    public static void main(String[] args) {
+        OuterClass.outerStaticMethod();
+        OuterClass outer = new OuterClass();
+        outer.outerNonStaticMethod();
+    }
+}
+
+Q5)
+public class A {
+    private static String staticOuterField = "Static field of class A";
+    static class B { 
+        static void staticMethodB() {
+            System.out.println("Static method in StaticNestedClass B");
+
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+        }
+    }
+    static class C {
+        static void staticMethodC() {
+            System.out.println("Static method in StaticNestedClass C");
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+            B.staticMethodB();
+        }
+    }
+
+    public static void main(String[] args) {
+        B.staticMethodB();
+        C.staticMethodC();
+    }
+}
+Q6)
+public class OuterClass {
+    private String outerField = "Outer class field";
+    private static String staticOuterField = "Static outer class field";
+    static class StaticInnerClass {
+        private static String staticInnerField = "Static inner class field";
+        private String innerField = "Inner class field";
+        void nonStaticMethod(OuterClass outer) {
+            System.out.println("Non-static method in StaticInnerClass");
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+            System.out.println("Accessing outerField through an instance: " + outer.outerField);
+            System.out.println("Accessing staticInnerField: " + staticInnerField);
+            System.out.println("Accessing innerField: " + innerField);
+        }
+        static void staticMethod() {
+            System.out.println("Static method in StaticInnerClass");
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+            System.out.println("Accessing staticInnerField: " + staticInnerField);
+            StaticInnerClass inner = new StaticInnerClass();
+            System.out.println("Accessing innerField via instance: " + inner.innerField);
+        }
+    }
+
+    static void outerStaticMethod() {
+        System.out.println("Static method in OuterClass");
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod(new OuterClass());
+    }
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod(this);
+    }
+
+    public static void main(String[] args) {
+        OuterClass.outerStaticMethod();
+        OuterClass outer = new OuterClass();
+        outer.outerNonStaticMethod();
+    }
+}
+
+Q7)
+public class OuterClass {
+
+    private String outerField = "Outer class field";
+    private static String staticOuterField = "Static outer class field";
+
+    static class StaticInnerClass {
+
+        private String innerField = "Inner class field";
+
+        void nonStaticMethod(OuterClass outer) {
+            System.out.println("Non-static method in StaticInnerClass");
+
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+            System.out.println("Accessing outerField through an instance: " + outer.outerField);
+            System.out.println("Accessing innerField: " + innerField);
+        }
+
+        static void staticMethod() {
+            System.out.println("Static method in StaticInnerClass");
+
+            System.out.println("Accessing staticOuterField: " + staticOuterField);
+
+            StaticInnerClass inner = new StaticInnerClass();
+            System.out.println("Accessing innerField via instance: " + inner.innerField);
+        }
+    }
+
+    static void outerStaticMethod() {
+        System.out.println("Static method in OuterClass");
+
+        System.out.println("Accessing staticOuterField: " + staticOuterField);
+
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod(new OuterClass());
+    }
+
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+
+        StaticInnerClass inner = new StaticInnerClass();
+        inner.nonStaticMethod(this);
+    }
+
+    public static void main(String[] args) {
+        OuterClass.outerStaticMethod();
+
+        OuterClass outer = new OuterClass();
+
+        outer.outerNonStaticMethod();
+    }
+}
+Q8)
+public class OuterClass {
+
+    private String outerField = "Outer class field";
+
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in OuterClass");
+
+        InnerClass inner = new InnerClass();
+        inner.nonStaticMethod();
+    }
+
+    class InnerClass {
+
+        private String innerField = "Inner class field";
+
+        void nonStaticMethod() {
+            System.out.println("Non-static method in InnerClass");
+
+            System.out.println("Accessing outerField: " + outerField);
+            System.out.println("Accessing innerField: " + innerField);
+        }
+    }
+
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.outerNonStaticMethod();
+    }
+}
+Q9)
+public class A {
+
+    private String outerField = "Outer class field";
+
+    void outerNonStaticMethod() {
+        System.out.println("Non-static method in A");
+
+        B bInstance = new B();
+        bInstance.nonStaticMethod();
+
+        C cInstance = new C();
+        cInstance.staticMethod();
+    }
+
+    class B {
+
+        void nonStaticMethod() {
+            System.out.println("Non-static method in B");
+            System.out.println("Accessing outerField: " + outerField);
+        }
+    }
+
+    class C {
+
+        static void staticMethod() {
+            System.out.println("Static method in C");
+
+            A outer = new A();
+            System.out.println("Accessing outerField via instance: " + outer.outerField);
+        }
+    }
+
+    public static void main(String[] args) {
+        A outer = new A();
+        outer.outerNonStaticMethod();
+    }
+}
+Q10)
+public class A {
+
+    static class B {
+        
+        private String instanceVariableB = "Instance variable in B";
+
+        static void staticMethodB() {
+            System.out.println("Static method in B");
+
+            B bInstance = new B();
+            System.out.println("Accessing instanceVariableB via instance: " + bInstance.instanceVariableB);
+        }
+
+        void nonStaticMethodB() {
+            System.out.println("Non-static method in B");
+        }
+    }
+
+    static class C {
+        
+        private String instanceVariableC = "Instance variable in C";
+
+        static void staticMethodC() {
+            System.out.println("Static method in C");
+
+            C cInstance = new C();
+            System.out.println("Accessing instanceVariableC via instance: " + cInstance.instanceVariableC);
+        }
+
+        void nonStaticMethodC() {
+            System.out.println("Non-static method in C");
+        }
+    }
+
+    public static void main(String[] args) {
+        B.staticMethodB();
+        C.staticMethodC();
+
+        B bInstance = new B();
+        bInstance.nonStaticMethodB();
+
+        C cInstance = new C();
+        cInstance.nonStaticMethodC();
+    }
+}
+Q11)\public class A {
+    
+    static int staticVariableA = 10;
+
+    static void staticMethodA() {
+        System.out.println("Static method of class A");
+    }
+    
+    static class B {
+        static int staticVariableB = 20;
+
+        static void staticMethodB() {
+            System.out.println("Static method of class B");
+            System.out.println("Static variable of class A: " + staticVariableA);
+        }
+    }
+    
+    static class C {
+        static int staticVariableC = 30;
+
+        static void staticMethodC() {
+            System.out.println("Static method of class C");
+            System.out.println("Static variable of class A: " + staticVariableA);
+        }
+    }
+}
