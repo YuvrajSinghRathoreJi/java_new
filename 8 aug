@@ -1,0 +1,532 @@
+Q1)
+public class Main {
+
+    static class FileA {
+        public void a1() {
+            System.out.println("Method 1 ");
+        }
+    }
+    static class FileB {
+        public void a2(String message) {
+            System.out.println("Method 2 " + message);
+        }
+    }
+    static class FileC {
+        public String a3() {
+            return "Method 3";
+        }
+    }
+    static class FileD {
+        public int a4(int number) {
+            return number * 2;
+        }
+    }
+    static class FileE {
+        public Number returnCovariantNoArgs() {
+            return Integer.valueOf(10);
+        }
+    }
+    static class FileEChild extends FileE {
+        public Integer returnCovariantNoArgs() {
+            return Integer.valueOf(20);
+        }
+    }
+
+    public static void main(String[] args) {
+        FileA fileA = new FileA();
+        fileA.a1();
+        FileB fileB = new FileB();
+        fileB.a2("Hello, World!");
+        FileC fileC = new FileC();
+        String message = fileC.a3();
+        System.out.println(message);
+        FileD fileD = new FileD();
+        int result = fileD.a4(5);
+        System.out.println("Result from FileD: " + result);
+        FileE fileE = new FileE();
+        Number number = fileE.returnCovariantNoArgs();
+        System.out.println("Covariant return type from FileE: " + number);
+
+        FileEChild fileEChild = new FileEChild();
+        Integer integer = fileEChild.returnCovariantNoArgs();
+        System.out.println("Covariant return type from FileEChild: " + integer);
+    }
+}
+
+Q2)public class Main {
+
+    static class FileA {
+        private String message;
+
+        public FileA() {
+            this.message = "Default Constructor Called";
+        }
+
+        public void show() {
+            System.out.println(message);
+        }
+    }
+
+    static class FileB {
+        private String message;
+
+        public FileB(String message) {
+            this.message = message;
+        }
+
+        public void show() {
+            System.out.println(message);
+        }
+    }
+
+    public static void main(String[] args) {
+        FileA fileA = new FileA();
+        fileA.show();
+
+        FileB fileB = new FileB("Parameterized Constructor Called");
+        fileB.show();
+    }
+}
+
+Q3)
+public class Main {
+
+    static class FileA {
+        private final int CONSTANT_VALUE = 100;
+
+        public void show() {
+            System.out.println("Constant Value in FileA: " + CONSTANT_VALUE);
+        }
+    }
+
+    static class FileB {
+        private int value1 = 42;
+        private int value2 = 42;
+
+        public void show() {
+            System.out.println("Value1 in FileB: " + value1);
+            System.out.println("Value2 in FileB: " + value2);
+        }
+    }
+
+    static class FileC {
+        private int value1 = 10;
+        private int value2 = 20;
+
+        public void show() {
+            System.out.println("Value1 in FileC: " + value1);
+            System.out.println("Value2 in FileC: " + value2);
+        }
+    }
+
+    static class FileD {
+        private int value1;
+        private int value2;
+
+        public FileD(int value1, int value2) {
+            this.value1 = value1;
+            this.value2 = value2;
+        }
+
+        public void show() {
+            System.out.println("Value1 in FileD: " + value1);
+            System.out.println("Value2 in FileD: " + value2);
+        }
+    }
+
+    public static void main(String[] args) {
+        FileA fileA = new FileA();
+        fileA.show();
+
+        FileB fileB = new FileB();
+        fileB.show();
+
+        FileC fileC = new FileC();
+        fileC.show();
+
+        FileD fileD = new FileD(100, 200);
+        fileD.show();
+    }
+}
+
+Q4)public class Main {
+
+    static class FileA {
+        private String name;
+        private int age;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            if (age > 0) {
+                this.age = age;
+            } else {
+                System.out.println("Invalid age. Must be positive.");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        FileA fileA = new FileA();
+
+        fileA.setName("John Doe");
+        fileA.setAge(30);
+        String name = fileA.getName();
+        int age = fileA.getAge();
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+
+        fileA.setAge(-5); 
+    }
+}
+
+Q5)public class Main {
+
+    static class Parent {
+        public void display() {
+            System.out.println("This is the Parent class.");
+        }
+    }
+
+    static class Child extends Parent {
+        public void show() {
+            System.out.println("This is the Child class, inheriting from Parent.");
+        }
+    }
+
+    static class Grandparent {
+        public void display() {
+            System.out.println("This is the Grandparent class.");
+        }
+    }
+
+    static class ParentB extends Grandparent {
+        public void show() {
+            System.out.println("This is the ParentB class, inheriting from Grandparent.");
+        }
+    }
+
+    static class ChildB extends ParentB {
+        public void print() {
+            System.out.println("This is the ChildB class, inheriting from ParentB.");
+        }
+    }
+
+    static class Base {
+        public void display() {
+            System.out.println("This is the Base class.");
+        }
+    }
+
+    static class Derived1 extends Base {
+        public void show() {
+            System.out.println("This is the Derived1 class, inheriting from Base.");
+        }
+    }
+
+    static class Derived2 extends Base {
+        public void print() {
+            System.out.println("This is the Derived2 class, inheriting from Base.");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Single-Level Inheritance:");
+        Child child = new Child();
+        child.display();
+        child.show();
+
+        System.out.println("\nMultilevel Inheritance:");
+        ChildB childB = new ChildB();
+        childB.display();
+        childB.show();
+        childB.print();
+
+        System.out.println("\nHierarchical Inheritance:");
+        Derived1 derived1 = new Derived1();
+        derived1.display();
+        derived1.show();
+
+        Derived2 derived2 = new Derived2();
+        derived2.display();
+        derived2.print();
+    }
+}
+
+Q6)
+public class Main {
+
+    static class MethodOverloading {
+        public void display() {
+            System.out.println("Display with no arguments.");
+        }
+
+        public void display(String message) {
+            System.out.println("Display with a message: " + message);
+        }
+
+        public void display(int number) {
+            System.out.println("Display with a number: " + number);
+        }
+    }
+
+    static class ConstructorOverloading {
+        private String message;
+        private int number;
+
+        public ConstructorOverloading() {
+            this.message = "Default Message";
+            this.number = 0;
+        }
+
+        public ConstructorOverloading(String message) {
+            this.message = message;
+            this.number = 0;
+        }
+
+        public ConstructorOverloading(int number) {
+            this.message = "Default Message";
+            this.number = number;
+        }
+
+        public ConstructorOverloading(String message, int number) {
+            this.message = message;
+            this.number = number;
+        }
+
+        public void showValues() {
+            System.out.println("Message: " + message);
+            System.out.println("Number: " + number);
+        }
+    }
+
+    static class ConstructorChaining {
+        private String name;
+
+        public ConstructorChaining() {
+            this("Default Name");
+        }
+
+        public ConstructorChaining(String name) {
+            this.name = name;
+        }
+
+        public void display() {
+            System.out.println("Name: " + name);
+        }
+    }
+
+    static class Animal {
+        public void makeSound() {
+            System.out.println("Animal makes a sound.");
+        }
+    }
+
+    static class Dog extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Dog barks.");
+        }
+    }
+
+    static class Parent {
+        public static void staticMethod() {
+            System.out.println("Static method in Parent.");
+        }
+    }
+
+    static class Child extends Parent {
+        public static void staticMethod() {
+            System.out.println("Static method in Child.");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Method Overloading:");
+        MethodOverloading mo = new MethodOverloading();
+        mo.display();
+        mo.display("Hello, World!");
+        mo.display(42);
+
+        System.out.println("\nConstructor Overloading:");
+        ConstructorOverloading co1 = new ConstructorOverloading();
+        ConstructorOverloading co2 = new ConstructorOverloading("Custom Message");
+        ConstructorOverloading co3 = new ConstructorOverloading(100);
+        ConstructorOverloading co4 = new ConstructorOverloading("Custom Message", 200);
+        co1.showValues();
+        co2.showValues();
+        co3.showValues();
+        co4.showValues();
+
+        System.out.println("\nConstructor Chaining:");
+        ConstructorChaining cc1 = new ConstructorChaining();
+        ConstructorChaining cc2 = new ConstructorChaining("Chained Name");
+        cc1.display();
+        cc2.display();
+
+        System.out.println("\nMethod Overriding:");
+        Animal animal = new Animal();
+        Animal dog = new Dog();
+        animal.makeSound();
+        dog.makeSound();
+
+        System.out.println("\nMethod Hiding:");
+        Parent.staticMethod();
+        Child.staticMethod();
+    }
+}
+
+Q7)
+public class Main {
+
+    static class Company {
+        protected String empname;
+        protected String eid;
+        protected String efname;
+        protected String econtact;
+        protected String eaddress;
+        protected String ealternate_number;
+        protected double salary;
+        protected String edepartment;
+        protected String bankaccountnumber;
+        protected String post;
+
+        public Company(String empname, String eid, String efname, String econtact, String eaddress,
+                       String ealternate_number, double salary, String edepartment,
+                       String bankaccountnumber, String post) {
+            this.empname = empname;
+            this.eid = eid;
+            this.efname = efname;
+            this.econtact = econtact;
+            this.eaddress = eaddress;
+            this.ealternate_number = ealternate_number;
+            this.salary = salary;
+            this.edepartment = edepartment;
+            this.bankaccountnumber = bankaccountnumber;
+            this.post = post;
+        }
+        public String toString() {
+            return "Company{" +
+                    "empname='" + empname + '\'' +
+                    ", eid='" + eid + '\'' +
+                    ", efname='" + efname + '\'' +
+                    ", econtact='" + econtact + '\'' +
+                    ", eaddress='" + eaddress + '\'' +
+                    ", ealternate_number='" + ealternate_number + '\'' +
+                    ", salary=" + salary +
+                    ", edepartment='" + edepartment + '\'' +
+                    ", bankaccountnumber='" + bankaccountnumber + '\'' +
+                    ", post='" + post + '\'' +
+                    '}';
+        }
+    }
+
+    static class Employee extends Company {
+
+        public Employee(String empname, String eid, String efname, String econtact, String eaddress,
+                        String ealternate_number, double salary, String edepartment,
+                        String bankaccountnumber, String post) {
+            super(empname, eid, efname, econtact, eaddress, ealternate_number, salary, edepartment, bankaccountnumber, post);
+        }
+
+        public void displayEmployeeDetails() {
+            System.out.println("Employee Details:");
+            System.out.println("Name: " + empname);
+            System.out.println("ID: " + eid);
+            System.out.println("Father's Name: " + efname);
+            System.out.println("Contact: " + econtact);
+            System.out.println("Address: " + eaddress);
+            System.out.println("Alternate Number: " + ealternate_number);
+            System.out.println("Salary: " + salary);
+            System.out.println("Department: " + edepartment);
+            System.out.println("Bank Account Number: " + bankaccountnumber);
+            System.out.println("Post: " + post);
+        }
+    }
+
+    public static void main(String[] args) {
+        Employee emp = new Employee("yuvraj", "E123", "vikram ", "9999933393", "12 pooja Street",
+                "098-6484-4321", 50000.0, "Engineering", "98765433245321", "Software Engineer");
+        emp.displayEmployeeDetails();
+    }
+}
+Q8)
+public class Main {
+
+    static class College {
+        protected String name;
+        protected String fname;
+        protected String mname;
+        protected String className; // Renamed 'class' to 'className' because 'class' is a reserved keyword
+        protected String address;
+        protected String contact;
+        protected String roll_no;
+        protected String gender;
+        protected double marks;
+
+        public College(String name, String fname, String mname, String className, String address,
+                       String contact, String roll_no, String gender, double marks) {
+            this.name = name;
+            this.fname = fname;
+            this.mname = mname;
+            this.className = className;
+            this.address = address;
+            this.contact = contact;
+            this.roll_no = roll_no;
+            this.gender = gender;
+            this.marks = marks;
+        }
+        public String toString() {
+            return "College{" +
+                    "name='" + name + '\'' +
+                    ", fname='" + fname + '\'' +
+                    ", mname='" + mname + '\'' +
+                    ", className='" + className + '\'' +
+                    ", address='" + address + '\'' +
+                    ", contact='" + contact + '\'' +
+                    ", roll_no='" + roll_no + '\'' +
+                    ", gender='" + gender + '\'' +
+                    ", marks=" + marks +
+                    '}';
+        }
+    }
+
+    static class Student extends College {
+
+        public Student(String name, String fname, String mname, String className, String address,
+                       String contact, String roll_no, String gender, double marks) {
+            super(name, fname, mname, className, address, contact, roll_no, gender, marks);
+        }
+
+        public void displayStudentDetails() {
+            System.out.println("Student Details:");
+            System.out.println("Name: " + name);
+            System.out.println("Father's Name: " + fname);
+            System.out.println("Mother's Name: " + mname);
+            System.out.println("Class: " + className);
+            System.out.println("Address: " + address);
+            System.out.println("Contact: " + contact);
+            System.out.println("Roll Number: " + roll_no);
+            System.out.println("Gender: " + gender);
+            System.out.println("Marks: " + marks);
+        }
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student("yuv", "vik ", "sanju", "12th Grade", "12 pooja Street",
+                "555342112", "21", "Male", 88.5);
+        student.displayStudentDetails();
+    }
+}
+
+
