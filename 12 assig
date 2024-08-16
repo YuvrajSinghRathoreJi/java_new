@@ -1,0 +1,609 @@
+Q1)
+public class Main {
+    public static void main(String[] args) {
+        byte a = 100;
+
+        short shortValue = a;
+        System.out.println("byte to short: " + shortValue);
+
+        char b = (char) a;
+        System.out.println("byte to char: " + b);
+
+        int c = a;
+        System.out.println("byte to int: " + c);
+
+        long d = a;
+        System.out.println("byte to long: " + d);
+
+        float e = a;
+        System.out.println("byte to float: " + e);
+
+        double f = a;
+        System.out.println("byte to double: " + f);
+    }
+}
+
+Q2)
+public class Main {
+    public static void main(String[] args) {
+        short a = 100;
+
+        char charValue = (char) a;
+        System.out.println("short to char: " + charValue);
+
+        int b = a;
+        System.out.println("short to int: " + b);
+
+        long c = a;
+        System.out.println("short to long: " + c);
+
+        float d = a;
+        System.out.println("short to float: " + d);
+
+        double e = a;
+        System.out.println("short to double: " + e);
+    }
+}
+
+Q3
+
+public class Main {
+    public static void main(String[] args) {
+        char a = 'A';
+
+        int b = a;
+        System.out.println("char to int: " + b);
+
+        long c = a;
+        System.out.println("char to long: " + c);
+
+        float d = a;
+        System.out.println("char to float: " + d);
+
+        double e = a;
+        System.out.println("char to double: " + e);
+    }
+}
+
+Q4)public class Main {
+    public static void main(String[] args) {
+        int a = 123456; 
+
+        long b = a; 
+        System.out.println("int to long: " + b); 
+
+        float c = a; 
+        System.out.println("int to float: " + c);
+        double d = a; 
+        System.out.println("int to double: " + d);
+    }
+}
+
+Q5)
+public class Main {
+    public static void main(String[] args) {
+        long a = 123456789012345L;
+        float b = a;
+        System.out.println("long to float: " + b);
+        double c = a;
+        System.out.println("long to double: " + c);
+    }
+}
+
+Q6)public class Main {
+    public static void main(String[] args) {
+        float a = 123.456f; 
+        double b = a; 
+        System.out.println("float to double: " + b); 
+    }
+}
+
+Q7) public class Main {
+    public static void main(String[] args) {
+        double a = 123456.789;
+
+        float b = (float) a;
+        System.out.println("double to float: " + b);
+
+        long c = (long) a;
+        System.out.println("double to long: " + c);
+
+        int d = (int) a;
+        System.out.println("double to int: " + d);
+
+        char e = (char) a;
+        System.out.println("double to char: " + e);
+
+        short f = (short) a;
+        System.out.println("double to short: " + f);
+    }
+}
+
+Q8) public class Main {
+    public static void main(String[] args) {
+        float a = 1234.56f;
+
+        long b = (long) a;
+        System.out.println("float to long: " + b);
+
+        int c = (int) a;
+        System.out.println("float to int: " + c);
+
+        char d = (char) a;
+        System.out.println("float to char: " + d);
+
+        short e = (short) a;
+        System.out.println("float to short: " + e);
+
+        byte f = (byte) a;
+        System.out.println("float to byte: " + f);
+    }
+}
+
+Q9)
+public class Main {
+    public static void main(String[] args) {
+        long a = 123456789012345L;
+
+        int b = (int) a;
+        System.out.println("long to int: " + b);
+
+        char c = (char) a;
+        System.out.println("long to char: " + c);
+
+        short d = (short) a;
+        System.out.println("long to short: " + d);
+
+        byte e = (byte) a;
+        System.out.println("long to byte: " + e);
+    }
+}
+
+Q10)
+public class Main {
+    public static void main(String[] args) {
+        char a = 'A';
+
+        short b = (short) a;
+        System.out.println("char to short: " + b);
+
+        byte c = (byte) a;
+        System.out.println("char to byte: " + c);
+    }
+}
+
+Q11)
+public class Main {
+    public static void main(String[] args) {
+        short a = 123;
+
+        byte b = (byte) a;
+        System.out.println("short to byte: " + b);
+    }
+}
+
+Q12)public class Main {
+    public static void main(String[] args) {
+        double a = 123456.789;
+
+        long b = (long) a;
+        float c = (float) b;
+        System.out.println("double to long to float: " + c);
+
+        int d = (int) a;
+        float e = (float) d;
+        System.out.println("double to int to float: " + e);
+
+        char i = (char) a;
+        float f = (float) i;
+        System.out.println("double to char to float: " + f);
+
+        short h = (short) a;
+        float g = (float) h;
+        System.out.println("double to short to float: " + g);
+
+        long j = 123456L;
+        short p = (short) j;
+        int v3 = (int) p;
+        System.out.println("long to short to int: " + v3);
+    }
+}
+
+Q13)
+import java.util.*;
+
+public class Main {
+
+    static class Employee {
+        private int id;
+        private String name;
+        private String companyName;
+        private String department;
+        private String contact;
+        private String address;
+        private String email;
+        private String password;
+        private double salary;
+
+        public Employee(int id, String name, String companyName, String department, String contact,
+                        String address, String email, String password, double salary) {
+            this.id = id;
+            this.name = name;
+            this.companyName = companyName;
+            this.department = department;
+            this.contact = contact;
+            this.address = address;
+            this.email = email;
+            this.password = password;
+            this.salary = salary;
+        }
+        public String toString() {
+            return id + "," + name + "," + companyName + "," + department + "," + contact + "," +
+                    address + "," + email + "," + password + "," + salary;
+        }
+    }
+
+    static class Work {
+        private int employeeId;
+        private String workDescription;
+        private String startDate;
+        private String endDate;
+        private String status;
+
+        public Work(int employeeId, String workDescription, String startDate, String endDate, String status) {
+            this.employeeId = employeeId;
+            this.workDescription = workDescription;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.status = status;
+        }
+
+        
+        public String toString() {
+            return employeeId + "," + workDescription + "," + startDate + "," + endDate + "," + status;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter employee details:");
+        System.out.print("ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Company Name: ");
+        String companyName = scanner.nextLine();
+        System.out.print("Department: ");
+        String department = scanner.nextLine();
+        System.out.print("Contact: ");
+        String contact = scanner.nextLine();
+        System.out.print("Address: ");
+        String address = scanner.nextLine();
+        System.out.print("Email: ");
+        String email = scanner.nextLine();
+        System.out.print("Password: ");
+        String password = scanner.nextLine();
+        System.out.print("Salary: ");
+        double salary = scanner.nextDouble();
+        scanner.nextLine();
+
+        Employee employee = new Employee(id, name, companyName, department, contact, address, email, password, salary);
+
+        System.out.println("Simulating write to file A:");
+        System.out.println(employee);
+
+        System.out.println("Enter work details:");
+        System.out.print("Employee ID: ");
+        int employeeId = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Work Description: ");
+        String workDescription = scanner.nextLine();
+        System.out.print("Start Date (YYYY-MM-DD): ");
+        String startDate = scanner.nextLine();
+        System.out.print("End Date (YYYY-MM-DD): ");
+        String endDate = scanner.nextLine();
+        System.out.print("Status: ");
+        String status = scanner.nextLine();
+
+        Work work = new Work(employeeId, workDescription, startDate, endDate, status);
+
+        System.out.println("Simulating write to file B:");
+        System.out.println(work);
+    }
+}
+
+Q14)import java.util.Scanner;
+
+public class Main {
+
+    static class Book {
+        private String title;
+        private String author;
+        private String type;
+        private String name;
+        private int page;
+        private String content;
+        private double price;
+        private String date;
+
+        public Book(String title, String author, String type, String name, int page, String content, double price, String date) {
+            this.title = title;
+            this.author = author;
+            this.type = type;
+            this.name = name;
+            this.page = page;
+            this.content = content;
+            this.price = price;
+            this.date = date;
+        }
+
+        @Override
+        public String toString() {
+            return title + "," + author + "," + type + "," + name + "," + page + "," + content + "," + price + "," + date;
+        }
+    }
+
+    static class Work {
+        private String bookTitle;
+        private String workDescription;
+        private String startDate;
+        private String endDate;
+        private String status;
+
+        public Work(String bookTitle, String workDescription, String startDate, String endDate, String status) {
+            this.bookTitle = bookTitle;
+            this.workDescription = workDescription;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.status = status;
+        }
+
+        public String toString() {
+            return bookTitle + "," + workDescription + "," + startDate + "," + endDate + "," + status;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter book details:");
+        System.out.print("Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Author: ");
+        String author = scanner.nextLine();
+        System.out.print("Type: ");
+        String type = scanner.nextLine();
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Page Count: ");
+        int page = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Content: ");
+        String content = scanner.nextLine();
+        System.out.print("Price: ");
+        double price = scanner.nextDouble();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Date (YYYY-MM-DD): ");
+        String date = scanner.nextLine();
+
+        Book book = new Book(title, author, type, name, page, content, price, date);
+
+        System.out.println("Simulating write to file A:");
+        System.out.println(book);
+
+        System.out.println("Enter work details:");
+        System.out.print("Book Title: ");
+        String bookTitle = scanner.nextLine();
+        System.out.print("Work Description: ");
+        String workDescription = scanner.nextLine();
+        System.out.print("Start Date (YYYY-MM-DD): ");
+        String startDate = scanner.nextLine();
+        System.out.print("End Date (YYYY-MM-DD): ");
+        String endDate = scanner.nextLine();
+        System.out.print("Status: ");
+        String status = scanner.nextLine();
+
+        Work work = new Work(bookTitle, workDescription, startDate, endDate, status);
+
+        System.out.println("Simulating write to file B:");
+        System.out.println(work);
+
+        scanner.close();
+    }
+}
+Q15)
+import java.util.Scanner;
+
+public class Main {
+
+    static class TicketBooking {
+        private String name;
+        private String address;
+        private String contact;
+        private String gender;
+        private int totalNumber;
+        private String movieName;
+
+        public TicketBooking(String name, String address, String contact, String gender, int totalNumber, String movieName) {
+            this.name = name;
+            this.address = address;
+            this.contact = contact;
+            this.gender = gender;
+            this.totalNumber = totalNumber;
+            this.movieName = movieName;
+        }
+
+        @Override
+        public String toString() {
+            return name + "," + address + "," + contact + "," + gender + "," + totalNumber + "," + movieName;
+        }
+    }
+
+    static class Work {
+        private String movieName;
+        private String workDescription;
+        private String startDate;
+        private String endDate;
+        private String status;
+
+        public Work(String movieName, String workDescription, String startDate, String endDate, String status) {
+            this.movieName = movieName;
+            this.workDescription = workDescription;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.status = status;
+        }
+
+        @Override
+        public String toString() {
+            return movieName + "," + workDescription + "," + startDate + "," + endDate + "," + status;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter ticket booking details:");
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Address: ");
+        String address = scanner.nextLine();
+        System.out.print("Contact: ");
+        String contact = scanner.nextLine();
+        System.out.print("Gender: ");
+        String gender = scanner.nextLine();
+        System.out.print("Total Number of Tickets: ");
+        int totalNumber = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        System.out.print("Movie Name: ");
+        String movieName = scanner.nextLine();
+
+        TicketBooking ticketBooking = new TicketBooking(name, address, contact, gender, totalNumber, movieName);
+
+        System.out.println("Simulating write to file A:");
+        System.out.println(ticketBooking);
+
+        System.out.println("Enter work details:");
+        System.out.print("Movie Name: ");
+        String workMovieName = scanner.nextLine();
+        System.out.print("Work Description: ");
+        String workDescription = scanner.nextLine();
+        System.out.print("Start Date (YYYY-MM-DD): ");
+        String startDate = scanner.nextLine();
+        System.out.print("End Date (YYYY-MM-DD): ");
+        String endDate = scanner.nextLine();
+        System.out.print("Status: ");
+        String status = scanner.nextLine();
+
+        Work work = new Work(workMovieName, workDescription, startDate, endDate, status);
+
+        System.out.println("Simulating write to file B:");
+        System.out.println(work);
+
+        scanner.close();
+    }
+}
+
+Q16) import java.util.Scanner;
+
+public class Main {
+
+    static class College {
+        private String name;
+        private String fname;  // Father's name
+        private String mname;  // Mother's name
+        private String graduation;
+        private String address;
+        private String contact;
+        private String groupName;
+        private String semester;
+
+        public College(String name, String fname, String mname, String graduation, String address,
+                       String contact, String groupName, String semester) {
+            this.name = name;
+            this.fname = fname;
+            this.mname = mname;
+            this.graduation = graduation;
+            this.address = address;
+            this.contact = contact;
+            this.groupName = groupName;
+            this.semester = semester;
+        }
+
+        @Override
+        public String toString() {
+            return name + "," + fname + "," + mname + "," + graduation + "," + address + "," +
+                    contact + "," + groupName + "," + semester;
+        }
+    }
+
+    static class Work {
+        private String studentName;
+        private String workDescription;
+        private String startDate;
+        private String endDate;
+        private String status;
+
+        public Work(String studentName, String workDescription, String startDate, String endDate, String status) {
+            this.studentName = studentName;
+            this.workDescription = workDescription;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.status = status;
+        }
+
+        @Override
+        public String toString() {
+            return studentName + "," + workDescription + "," + startDate + "," + endDate + "," + status;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter college details:");
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.print("Father's Name: ");
+        String fname = scanner.nextLine();
+        System.out.print("Mother's Name: ");
+        String mname = scanner.nextLine();
+        System.out.print("Graduation: ");
+        String graduation = scanner.nextLine();
+        System.out.print("Address: ");
+        String address = scanner.nextLine();
+        System.out.print("Contact: ");
+        String contact = scanner.nextLine();
+        System.out.print("Group Name: ");
+        String groupName = scanner.nextLine();
+        System.out.print("Semester: ");
+        String semester = scanner.nextLine();
+
+        College college = new College(name, fname, mname, graduation, address, contact, groupName, semester);
+
+        System.out.println("Simulating write to file A:");
+        System.out.println(college);
+
+        System.out.println("Enter work details:");
+        System.out.print("Student Name: ");
+        String studentName = scanner.nextLine();
+        System.out.print("Work Description: ");
+        String workDescription = scanner.nextLine();
+        System.out.print("Start Date (YYYY-MM-DD): ");
+        String startDate = scanner.nextLine();
+        System.out.print("End Date (YYYY-MM-DD): ");
+        String endDate = scanner.nextLine();
+        System.out.print("Status: ");
+        String status = scanner.nextLine();
+
+        Work work = new Work(studentName, workDescription, startDate, endDate, status);
+
+        System.out.println("Simulating write to file B:");
+        System.out.println(work);
+    }
+}
+
+
+
