@@ -1,0 +1,406 @@
+Q1)
+public class Main { 
+    public abstract static class College {
+        public abstract void course();
+        public abstract void department();
+        public abstract void details();
+    }
+    public static class People extends College {
+        private String name;
+        private String course;
+        private String department;
+
+        public People(String name, String course, String department) {
+            this.name = name;
+            this.course = course;
+            this.department = department;
+        }
+
+        
+        public void course() {
+            System.out.println("Course: " + course);
+        }
+
+        
+        public void department() {
+            System.out.println("Department: " + department);
+        }
+
+        
+        public void details() {
+            System.out.println("Name: " + name);
+            course();
+            department();
+        }
+    }
+
+    public static void main(String[] args) {
+        College student = new People("yuvraj ", "Computer Science", "Engineering");
+        student.details();
+    }
+}
+
+Q2) public class Main {
+
+    public abstract static class Mahindra {
+        public abstract void tyre();
+        public abstract void break1();
+        public abstract void mirror();
+        public abstract void horn();
+        public abstract void gate();
+    }
+
+    public static class Paranchi extends Mahindra {
+        @Override
+        public void tyre() {
+            System.out.println("Tyre: Alloy wheels");
+        }
+        public void break1() {
+            System.out.println("Brake: Disc brakes");
+        }
+
+        public void mirror() {
+            System.out.println("Mirror: Adjustable side mirrors");
+        }
+
+        public void horn() {
+            System.out.println("Horn: Loud horn");
+        }
+
+        public void gate() {
+            System.out.println("Gate: Automatic gate opener");
+        }
+    }
+
+    public static void main(String[] args) {
+        Mahindra vehicle = new Paranchi();
+        vehicle.tyre();
+        vehicle.break1();
+        vehicle.mirror();
+        vehicle.horn();
+        vehicle.gate();
+    }
+}
+Q3)
+public class Main {
+
+    public abstract static class Company {
+        public abstract void workProfile();
+        public abstract void department();
+        public abstract void details();
+    }
+
+    public static class Employee extends Company {
+        public void workProfile() {
+            System.out.println("Employee works in various roles.");
+        }
+
+        public void department() {
+            System.out.println("Employee belongs to a specific department.");
+        }
+
+        public void details() {
+            System.out.println("Employee details are provided here.");
+        }
+    }
+
+    public static class Manager extends Company {
+       
+        public void workProfile() {
+            System.out.println("Manager oversees departmental operations.");
+        }
+
+        public void department() {
+            System.out.println("Manager is in charge of multiple departments.");
+        }
+
+\        public void details() {
+            System.out.println("Manager details are provided here.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Company employee = new Employee();
+        Company manager = new Manager();
+
+        System.out.println("Employee:");
+        employee.workProfile();
+        employee.department();
+        employee.details();
+
+        System.out.println("\nManager:");
+        manager.workProfile();
+        manager.department();
+        manager.details();
+    }
+}
+Q4)
+public class Main {
+
+    public static class Mall {
+        public void shop() {
+            System.out.println("Mall has a variety of shops.");
+        }
+
+        public void bar() {
+            System.out.println("Mall has a bar.");
+        }
+
+        public void cafe() {
+            System.out.println("Mall has a café.");
+        }
+
+        public void restaurant() {
+            System.out.println("Mall has a restaurant.");
+        }
+
+        public void games() {
+            System.out.println("Mall has a games area.");
+        }
+    }
+
+    public static class Person extends Mall {
+        public void visitMall() {
+            System.out.println("Person is visiting the mall.");
+        }
+    }
+
+    public static class Child extends Person {
+        public void playGames() {
+            System.out.println("Child is playing games.");
+        }
+    }
+
+    public static class SeniorCitizen extends Child {
+        public void relax() {
+            System.out.println("Senior Citizen is relaxing.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Mall mall = new Mall();
+        Person person = new Person();
+        Child child = new Child();
+        SeniorCitizen seniorCitizen = new SeniorCitizen();
+
+        System.out.println("Mall:");
+        mall.shop();
+        mall.bar();
+        mall.cafe();
+        mall.restaurant();
+        mall.games();
+
+        System.out.println("\nPerson:");
+        person.visitMall();
+        person.shop();
+        person.cafe();
+
+        System.out.println("\nChild:");
+        child.playGames();
+        child.visitMall();
+        child.restaurant();
+
+        System.out.println("\nSenior Citizen:");
+        seniorCitizen.relax();
+        seniorCitizen.playGames();
+        seniorCitizen.visitMall();
+    }
+}
+Q5)
+public class Main {
+    public abstract static class College {
+        public abstract void course();
+
+        public void department() {
+            System.out.println("Department is defined in College.");
+        }
+
+        public void details() {
+            System.out.println("Details are provided in College.");
+        }
+    }
+
+    public static class People extends College {
+        public void course() {
+            System.out.println("Course is implemented in People.");
+        }
+    }
+
+    public static void main(String[] args) {
+        People person = new People();
+        
+        person.course(); 
+        person.department(); 
+        person.details();
+    }
+}
+Q6)
+public class Main {
+
+    public abstract static class Mahindra {
+        public abstract void tyre();
+        public abstract void break1();
+
+        public void mirror() {
+            System.out.println("Mirror: Adjustable side mirrors.");
+        }
+
+        public void horn() {
+            System.out.println("Horn: Loud horn.");
+        }
+
+        public void gate() {
+            System.out.println("Gate: Automatic gate opener.");
+        }
+    }
+
+    public static class Paranchi extends Mahindra {
+        public void tyre() {
+            System.out.println("Tyre: Alloy wheels.");
+        }
+
+        @Override
+        public void break1() {
+            System.out.println("Brake: Disc brakes.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Mahindra vehicle = new Paranchi();
+        
+        vehicle.tyre();
+        vehicle.break1();
+        vehicle.mirror();
+        vehicle.horn();
+        vehicle.gate();
+    }
+}
+
+Q7)
+public class Main {
+
+    public abstract static class Company {
+        public void workProfile() {
+            System.out.println("Company work profile.");
+        }
+
+        public abstract void department();
+
+        public abstract void details();
+    }
+
+    public static class Employee extends Company {
+        @Override
+        public void department() {
+            System.out.println("Employee department.");
+        }
+
+        @Override
+        public void details() {
+            System.out.println("Employee details.");
+        }
+    }
+
+    public static class Manager extends Company {
+        @Override
+        public void department() {
+            System.out.println("Manager department.");
+        }
+
+        @Override
+        public void details() {
+            System.out.println("Manager details.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Company employee = new Employee();
+        Company manager = new Manager();
+
+        System.out.println("Employee:");
+        employee.workProfile();
+        employee.department();
+        employee.details();
+
+        System.out.println("\nManager:");
+        manager.workProfile();
+        manager.department();
+        manager.details();
+    }
+}
+Q8)
+public class Main {
+
+    public static class Mall {
+        public void shop() {
+            System.out.println("Mall has a variety of shops.");
+        }
+
+        public void bar() {
+            System.out.println("Mall has a bar.");
+        }
+
+        public void cafe() {
+            System.out.println("Mall has a café.");
+        }
+
+        public void restaurant() {
+            System.out.println("Mall has a restaurant.");
+        }
+
+        public void games() {
+            System.out.println("Mall has a games area.");
+        }
+    }
+
+    public static class Person extends Mall {
+        public void visitMall() {
+            System.out.println("Person is visiting the mall.");
+        }
+    }
+
+    public static class Child extends Person {
+        public void playGames() {
+            System.out.println("Child is playing games.");
+        }
+    }
+
+    public static class SeniorCitizen extends Child {
+        public void relax() {
+            System.out.println("Senior Citizen is relaxing.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Mall mall = new Mall();
+        Person person = new Person();
+        Child child = new Child();
+        SeniorCitizen seniorCitizen = new SeniorCitizen();
+
+        System.out.println("Mall:");
+        mall.shop();
+        mall.bar();
+        mall.cafe();
+        mall.restaurant();
+        mall.games();
+
+        System.out.println("\nPerson:");
+        person.visitMall();
+        person.cafe();
+        person.restaurant();
+
+        System.out.println("\nChild:");
+        child.playGames();
+        child.visitMall();
+        child.cafe();
+
+        System.out.println("\nSenior Citizen:");
+        seniorCitizen.relax();
+        seniorCitizen.playGames();
+        seniorCitizen.visitMall();
+    }
+}
+Q9)
+
+
+
