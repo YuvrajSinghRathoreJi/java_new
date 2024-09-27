@@ -1,0 +1,156 @@
+
+all primitive data type 
+
+
+public class Shadow {
+    public static void main(String[] args){
+        int a[]={1,2,3,4,5,6};
+        System.out.print("size:"+ a.length);
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+ " ");
+
+        }
+
+        float b[]={1.2f,2.3f,3.4f,5.6f};
+        System.out.println("size:" +b.length);
+        for (int i=0;i<b.length;i++){
+            System.out.print(b[i] + " ");
+        }
+
+      char c[]={'a','b','c','d'};
+        System.out.println("size:" +c.length);
+        for(int i=0;i<c.length;i++){
+            System.out.println(c[i] +" ");
+        }
+
+          double d[]={23.33,34.44,45.55,56.66};
+        System.out.println("size :" +d.length);
+        for(int i=0;i<d.length;i++){
+            System.out.println(d[i] +" ");
+        }
+
+       short s[]={23,45,67,89};
+        System.out.println("size :" +s.length);
+        for(int i=0;i<s.length;i++){
+            System.out.println(s[i] +" ");
+        }
+        byte t[]={2,3,5,7,9};
+        System.out.println("size :" +t.length);
+        for(int i=0;i<t.length;i++){
+            System.out.println(t[i] +" ");
+        }
+
+
+    }
+    
+}
+
+
+String 
+
+public class Shadow {
+    public static void main(String[] args){
+        String s[]={"chaman","kajal","monika"};
+        for(int i=0;i<s.length;i++){
+            System.out.println(s[i] +" ");
+        }
+
+
+    }
+    
+}
+
+
+Object
+
+public class Shadow {
+    public static void main(String[] args){
+       Object o[]={23,'c',"chaman",6.7f};
+       for(int i=0;i<o.length;i++){
+        System.out.println(o[i] +" ");
+       }
+
+
+    }
+    
+}
+
+ 
+var 
+
+public class Shadow {
+    public static void main(String[] args){
+       var r=new Object[]{ 34,5.6f,"komal",34567};
+       for(var i:r){
+        System.out.println(i+" ");
+       }
+
+    }
+    
+}
+
+for loop and for each print 
+---------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+size find 
+first element and mid element and last element normal indexing 
+
+--------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+for loop 
+
+
+10,9,8,7,6,5,4,3,2,1 
+
+1,2,3,4,5,10,9,8,7,6 
+
+5,4,3,2,1,6,7,8,9,10
+
+5,4,3,2,1,10,9,8,7,6 
+--------------------------------------------------------------
+
+USER INUT 
+
+all primitive data type 
+
+String 
+
+Object
+ 
+var 
+
+for loop and for each print 
+---------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+size find 
+first element and mid element and last element normal indexing 
+
+--------------------------------------------------------------
+1,2,3,4,5,6,7,8,9,10 
+
+for loop 
+
+
+10,9,8,7,6,5,4,3,2,1 
+
+1,2,3,4,5,10,9,8,7,6 
+
+5,4,3,2,1,6,7,8,9,10
+
+5,4,3,2,1,10,9,8,7,6 
+--------------------------------------------------------------
+ellapse heterogenous data 
+all prmitive data type data store 
+Object class 
+String 
+
+--------------------------------------------------------------
+
+
+
+
+
+
